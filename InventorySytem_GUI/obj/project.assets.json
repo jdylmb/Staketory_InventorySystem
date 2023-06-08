@@ -3285,8 +3285,8 @@
     },
     "StakeTory_InventorySystem/1.0.0": {
       "type": "project",
-      "path": "../StakeTory2/StakeTory_InventorySystem/StakeTory_InventorySystem.csproj",
-      "msbuildProject": "../StakeTory2/StakeTory_InventorySystem/StakeTory_InventorySystem.csproj"
+      "path": "../InventorySystem_BE/StakeTory_InventorySystem/StakeTory_InventorySystem.csproj",
+      "msbuildProject": "../InventorySystem_BE/StakeTory_InventorySystem/StakeTory_InventorySystem.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3301,11 +3301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
       "projectName": "InventorySytem_GUI",
-      "projectPath": "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3322,8 +3322,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
-              "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj"
+            "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj"
             }
           }
         }

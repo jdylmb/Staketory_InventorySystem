@@ -37,7 +37,7 @@ namespace StakeTory_InventorySystem
         public bool CreateAccount(string username, string password, string fullName)
         {
             // Check if the username already exists
-            if (users.Exists(item => item.username.Equals(username, StringComparison.OrdinalIgnoreCase)))
+            if (users.Exists(item => item.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)))
             {
                 return false;
             }
@@ -45,9 +45,9 @@ namespace StakeTory_InventorySystem
             // Create a new user account
             User newItem = new User
             {
-                username = username,
-                password = password, // You can customize this as per your requirements
-                fullName = fullName,    // You can customize this as per your requirements
+                UserName = username,
+                Password = password, // You can customize this as per your requirements
+                FullName = fullName,    // You can customize this as per your requirements
             };
 
             users.Add(newItem);
@@ -59,7 +59,7 @@ namespace StakeTory_InventorySystem
         public bool Login(string username, string password)
         {
             // Check if the username and password match an existing user account
-            return users.Exists(item => item.username.Equals(username, StringComparison.OrdinalIgnoreCase));
+            return users.Exists(item => item.UserName.Equals(username, StringComparison.OrdinalIgnoreCase));
         }
 
         private void SaveUsers()

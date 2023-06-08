@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {}
+    "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
+    "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
         "projectName": "StakeTory_InventorySystem",
-        "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

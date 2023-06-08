@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StakeTory2\StakeTory_InventorySystem\StakeTory_InventorySystem.csproj" />
+    <ProjectReference Include="..\InventorySystem_BE\StakeTory_InventorySystem\StakeTory_InventorySystem.csproj" />
   </ItemGroup>
 
   <ItemGroup>

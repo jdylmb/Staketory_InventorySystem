@@ -1,85 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\InventorySytem_GUI.csproj": {}
+    "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\InventorySytem_GUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\InventorySytem_GUI.csproj": {
+    "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
-        "projectName": "InventorySytem_GUI",
-        "projectPath": "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\InventorySytem_GUI\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0-windows"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0-windows7.0": {
-            "targetAlias": "net6.0-windows",
-            "projectReferences": {
-              "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
-                "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
-          "dependencies": {
-            "Bunifu.UI.WinForms": {
-              "target": "Package",
-              "version": "[6.1.0, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            },
-            "Microsoft.WindowsDesktop.App.WindowsForms": {
-              "privateAssets": "none"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
         "projectName": "StakeTory_InventorySystem",
-        "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\StakeTory2\\StakeTory_InventorySystem\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -131,6 +63,74 @@
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\InventorySytem_GUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
+        "projectName": "InventorySytem_GUI",
+        "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\InventorySytem_GUI.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySytem_GUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\StakeTory_InventorySystem\\InventorySystem_BE\\StakeTory_InventorySystem\\StakeTory_InventorySystem.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Bunifu.UI.WinForms": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"

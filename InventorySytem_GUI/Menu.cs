@@ -63,5 +63,15 @@ namespace InventorySytem_GUI
             userPage1.Hide();
             productPage1.Show();
         }
+
+        private void categoriesPage1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoriesPage2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
