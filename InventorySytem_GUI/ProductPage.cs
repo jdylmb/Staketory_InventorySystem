@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace InventorySytem_GUI
@@ -15,32 +16,16 @@ namespace InventorySytem_GUI
     public partial class ProductPage : UserControl
     {
         private ProductManagement productManagement;
+        private int selectedIndex = -1;
         public ProductPage()
         {
             InitializeComponent();
 
             this.productManagement = new ProductManagement("product.json");
-            FetchProducts();
+            //FetchProducts();
+
+            displayDatagrid();
         }
-
-        private void FetchProducts()
-        {
-            listView1.Items.Clear();
-            List<Product> products = this.productManagement.GetProducts();
-
-            products.ForEach(p =>
-            {
-                ListViewItem item = new ListViewItem(p.Code);
-
-                item.SubItems.Add(p.Name);
-                item.SubItems.Add(p.Price.ToString());
-                item.SubItems.Add(p.Quantity.ToString());
-                item.SubItems.Add(p.Description);
-                item.SubItems.Add(p.Category);
-                listView1.Items.Add(item);
-            });
-        }
-
         private void ProductPage_Load(object sender, EventArgs e)
         {
 
@@ -56,8 +41,8 @@ namespace InventorySytem_GUI
                 Quantity = int.Parse(productQuantity.Text),
                 Price = float.Parse(price.Text),
                 Description = description.Text,
-                Category = categories.Text
-
+                Category = categories.Text,
+                dateUpdated = DateTime.Now.ToString("yyyy-MM-dd")
             };
 
             bool isSuccess = productManagement.AddItem(product);
@@ -66,28 +51,7 @@ namespace InventorySytem_GUI
             {
                 MessageBox.Show($"Product successfully created!");
 
-                FetchProducts();
-            }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (listView1.SelectedItems.Count > 0)
-            {
-                ListViewItem selectedItem = listView1.SelectedItems[0];
-                string idText = selectedItem.Text;
-                string nameText = selectedItem.SubItems[1].Text;
-                string priceText = selectedItem.SubItems[2].Text;
-                string quantityText = selectedItem.SubItems[3].Text;
-                string descriptionText = selectedItem.SubItems[4].Text;
-                string categoryText = selectedItem.SubItems[5].Text;
-
-                product_Id.Text = idText;
-                productName.Text = nameText;
-                productQuantity.Text = quantityText;
-                price.Text = priceText;
-                description.Text = descriptionText;
-                categories.Text = categoryText;
+                displayDatagrid();
             }
         }
 
@@ -98,7 +62,7 @@ namespace InventorySytem_GUI
 
             MessageBox.Show($"Product successfully deleted!");
 
-            FetchProducts();
+            displayDatagrid();
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -110,15 +74,104 @@ namespace InventorySytem_GUI
                 Quantity = int.Parse(productQuantity.Text),
                 Price = float.Parse(price.Text),
                 Description = description.Text,
-                Category = categories.Text
+                Category = categories.Text,
+                dateUpdated = DateTime.Now.ToString("yyyy-MM-dd")
 
             };
 
-            this.productManagement.UpdateProduct(product);
+            this.productManagement.UpdateProduct(product, selectedIndex);
 
             MessageBox.Show($"Product successfully updated!");
 
-            FetchProducts();
+            displayDatagrid();
+        }
+
+        private void dataGridView_ProductPage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow selectedRow = dataGridView_ProductPage.Rows[e.RowIndex];
+
+                // Access the values of the selected row using the Cells collection
+                string selectedProductCode = selectedRow.Cells["prod_Id"].Value.ToString();
+                string selectedProductName = selectedRow.Cells["Prod_name"].Value.ToString();
+                int selectedProductQuantity = Convert.ToInt32(selectedRow.Cells["qnty"].Value);
+                float selectedProductPrice = Convert.ToSingle(selectedRow.Cells["prod_price"].Value);
+                string selectedProductDescription = selectedRow.Cells["prod_description"].Value.ToString();
+                string selectedProductCategory = selectedRow.Cells["prod_cat"].Value.ToString();
+
+
+                // Use the retrieved values as needed
+                product_Id.Text = selectedProductCode;
+                productName.Text = selectedProductName;
+                productQuantity.Text = selectedProductQuantity.ToString();
+                price.Text = selectedProductPrice.ToString();
+                description.Text = selectedProductDescription;
+                categories.Text = selectedProductCategory;
+
+                this.selectedIndex = e.RowIndex;
+            }
+        }
+
+        private void displayDatagrid()
+        {
+            dataGridView_ProductPage.Rows.Clear();
+
+            List<Product> items = productManagement.inventory;
+            foreach (Product product in items)
+            {
+                dataGridView_ProductPage.Rows.Add(new object[] { product.Code, product.Name, product.Quantity, product.Price, product.Description, product.Category, product.dateUpdated });
+            }
+        }
+
+        private void MngProductPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void productName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prodIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void product_Id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productNameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void closeProductButton_Click(object sender, EventArgs e)
+        {
+            // verify the user wants to exit
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

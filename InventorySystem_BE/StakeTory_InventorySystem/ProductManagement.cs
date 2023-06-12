@@ -9,13 +9,15 @@ namespace StakeTory_InventorySystem
 {
     public class ProductManagement
     {
-        private List<Product> inventory;
+        public List<Product> inventory;
         private string inventoryFilePath;
+        SalesManagement salesManagement;
 
         public ProductManagement(string inventoryFilePath)
         {
             this.inventoryFilePath = inventoryFilePath;
             LoadInventory();
+            salesManagement = new SalesManagement("sales.json");
         }
 
         private void LoadInventory()
@@ -120,12 +122,24 @@ namespace StakeTory_InventorySystem
             SaveInventory();
         }
 
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(Product product, int selectedIndex)
         {
-            int selectedIndex = inventory.FindIndex(item => item.Code.Equals(product.Code, StringComparison.OrdinalIgnoreCase));
-
             if (selectedIndex >= 0 && selectedIndex < inventory.Count)
             {
+                if (inventory[selectedIndex].Quantity > product.Quantity)
+                {
+                    double totalSales = inventory[selectedIndex].TotalSales + (inventory[selectedIndex].Quantity - product.Quantity) * inventory[selectedIndex].Price;
+
+                    product.TotalSales = totalSales;
+
+                    Sales item = new Sales
+                    {
+                        Product_Code = product.Code,
+                        Amount = totalSales,
+                        Date = DateTime.Now.ToString("yyyy-MM-dd")
+                    };
+                    salesManagement.AddItem(item);
+                }
                 inventory[selectedIndex] = product;
             }
 

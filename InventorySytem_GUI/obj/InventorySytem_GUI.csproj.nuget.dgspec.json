@@ -112,6 +112,10 @@
             "Bunifu.UI.WinForms": {
               "target": "Package",
               "version": "[6.1.0, )"
+            },
+            "WinForms.DataVisualization": {
+              "target": "Package",
+              "version": "[1.8.0, )"
             }
           },
           "imports": [

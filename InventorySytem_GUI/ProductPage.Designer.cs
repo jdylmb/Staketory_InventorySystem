@@ -28,124 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductPage));
             productQuantity = new TextBox();
             productName = new TextBox();
             product_Id = new TextBox();
             description = new TextBox();
             price = new TextBox();
-            panel1 = new Panel();
-            mng_productLabel = new Label();
-            label1 = new Label();
             categories = new ComboBox();
             editBtn = new Button();
             deleteBtn = new Button();
             addBtn = new Button();
-            listView1 = new ListView();
-            panel2 = new Panel();
-            catgryLabel = new Label();
-            panel1.SuspendLayout();
+            dataGridView_ProductPage = new DataGridView();
+            prod_Id = new DataGridViewTextBoxColumn();
+            Prod_name = new DataGridViewTextBoxColumn();
+            qnty = new DataGridViewTextBoxColumn();
+            prod_price = new DataGridViewTextBoxColumn();
+            prod_description = new DataGridViewTextBoxColumn();
+            prod_cat = new DataGridViewTextBoxColumn();
+            date = new DataGridViewTextBoxColumn();
+            customizedPanel1 = new CustomizedPanel();
+            prodIdLabel = new Label();
+            productNameLabel = new Label();
+            productQuantityLabel = new Label();
+            priceLabel = new Label();
+            descriptionLabel = new Label();
+            categoryLabel = new Label();
+            customizedPanel2 = new CustomizedPanel();
+            searchBar = new TextBox();
+            searchBtn = new Button();
+            TitleLabel = new Label();
+            mng_productLabel = new Label();
+            MngProductPanel = new CustomizedPanel();
+            closeProductButton = new Button();
+            productLowerDockPanel = new CustomizedPanel();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_ProductPage).BeginInit();
+            customizedPanel1.SuspendLayout();
+            customizedPanel2.SuspendLayout();
+            MngProductPanel.SuspendLayout();
             SuspendLayout();
             // 
             // productQuantity
             // 
-            productQuantity.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            productQuantity.Location = new Point(50, 287);
+            productQuantity.Font = new Font("Segoe UI Symbol", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            productQuantity.Location = new Point(46, 331);
             productQuantity.Name = "productQuantity";
-            productQuantity.PlaceholderText = "Product Quantity";
-            productQuantity.Size = new Size(386, 46);
+            productQuantity.Size = new Size(386, 39);
             productQuantity.TabIndex = 18;
             // 
             // productName
             // 
-            productName.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            productName.Location = new Point(50, 219);
+            productName.Font = new Font("Segoe UI Symbol", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            productName.Location = new Point(45, 243);
             productName.Name = "productName";
-            productName.PlaceholderText = "Product Name";
-            productName.Size = new Size(386, 46);
+            productName.Size = new Size(386, 39);
             productName.TabIndex = 17;
+            productName.TextChanged += productName_TextChanged;
             // 
             // product_Id
             // 
             product_Id.AccessibleName = "product_Id";
-            product_Id.BackColor = Color.GhostWhite;
-            product_Id.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            product_Id.Location = new Point(50, 139);
+            product_Id.BackColor = SystemColors.Window;
+            product_Id.Font = new Font("Segoe UI Symbol", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            product_Id.Location = new Point(46, 151);
             product_Id.Name = "product_Id";
-            product_Id.PlaceholderText = "Product ID";
-            product_Id.Size = new Size(386, 46);
+            product_Id.Size = new Size(386, 39);
             product_Id.TabIndex = 16;
+            product_Id.TextChanged += product_Id_TextChanged;
             // 
             // description
             // 
-            description.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            description.Location = new Point(50, 464);
+            description.Font = new Font("Segoe UI Symbol", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            description.Location = new Point(46, 503);
             description.Name = "description";
-            description.PlaceholderText = "Description";
-            description.Size = new Size(386, 46);
+            description.Size = new Size(386, 39);
             description.TabIndex = 20;
             // 
             // price
             // 
-            price.AccessibleName = "Username";
-            price.BackColor = Color.GhostWhite;
-            price.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            price.Location = new Point(50, 369);
+            price.AccessibleName = "";
+            price.BackColor = SystemColors.Window;
+            price.Font = new Font("Segoe UI Symbol", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            price.Location = new Point(46, 415);
             price.Name = "price";
-            price.PlaceholderText = "Price";
-            price.Size = new Size(386, 46);
+            price.Size = new Size(386, 39);
             price.TabIndex = 19;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Indigo;
-            panel1.Controls.Add(mng_productLabel);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(3, 2, 3, 2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1279, 94);
-            panel1.TabIndex = 22;
-            // 
-            // mng_productLabel
-            // 
-            mng_productLabel.AutoSize = true;
-            mng_productLabel.Font = new Font("Footlight MT Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            mng_productLabel.ForeColor = SystemColors.ButtonHighlight;
-            mng_productLabel.Location = new Point(545, 55);
-            mng_productLabel.Name = "mng_productLabel";
-            mng_productLabel.Size = new Size(197, 29);
-            mng_productLabel.TabIndex = 2;
-            mng_productLabel.Text = "Manage Product";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(372, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(520, 36);
-            label1.TabIndex = 0;
-            label1.Text = "Staketory Management System";
             // 
             // categories
             // 
-            categories.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point);
-            categories.ForeColor = SystemColors.WindowFrame;
+            categories.Font = new Font("Segoe UI Symbol", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            categories.ForeColor = SystemColors.ActiveCaptionText;
             categories.FormattingEnabled = true;
-            categories.Location = new Point(50, 547);
+            categories.Location = new Point(45, 587);
             categories.Name = "categories";
-            categories.Size = new Size(386, 48);
+            categories.Size = new Size(386, 40);
             categories.TabIndex = 23;
-            categories.Text = "Category";
             // 
             // editBtn
             // 
-            editBtn.BackColor = Color.Indigo;
-            editBtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            editBtn.BackColor = Color.DodgerBlue;
+            editBtn.BackgroundImageLayout = ImageLayout.None;
+            editBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             editBtn.ForeColor = Color.GhostWhite;
-            editBtn.Location = new Point(178, 629);
+            editBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            editBtn.Location = new Point(177, 654);
             editBtn.Name = "editBtn";
             editBtn.Size = new Size(126, 50);
             editBtn.TabIndex = 26;
@@ -155,10 +141,10 @@
             // 
             // deleteBtn
             // 
-            deleteBtn.BackColor = Color.Indigo;
-            deleteBtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteBtn.BackColor = Color.Crimson;
+            deleteBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             deleteBtn.ForeColor = Color.GhostWhite;
-            deleteBtn.Location = new Point(310, 629);
+            deleteBtn.Location = new Point(309, 654);
             deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(126, 50);
             deleteBtn.TabIndex = 25;
@@ -168,72 +154,323 @@
             // 
             // addBtn
             // 
-            addBtn.BackColor = Color.Indigo;
-            addBtn.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            addBtn.BackColor = Color.SeaGreen;
+            addBtn.BackgroundImageLayout = ImageLayout.None;
+            addBtn.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             addBtn.ForeColor = Color.GhostWhite;
-            addBtn.Location = new Point(46, 629);
+            addBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            addBtn.Location = new Point(45, 654);
             addBtn.Name = "addBtn";
             addBtn.Size = new Size(126, 50);
             addBtn.TabIndex = 24;
             addBtn.Text = "Add";
+            addBtn.TextImageRelation = TextImageRelation.ImageAboveText;
             addBtn.UseVisualStyleBackColor = false;
             addBtn.Click += addBtn_Click;
             // 
-            // listView1
+            // dataGridView_ProductPage
             // 
-            listView1.BackColor = Color.GhostWhite;
-            listView1.BorderStyle = BorderStyle.None;
-            listView1.GridLines = true;
-            listView1.Location = new Point(533, 114);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(698, 657);
-            listView1.TabIndex = 27;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.SelectedIndexChanged += listView1_SelectedIndexChanged;
+            dataGridView_ProductPage.BackgroundColor = SystemColors.Control;
+            dataGridView_ProductPage.BorderStyle = BorderStyle.None;
+            dataGridView_ProductPage.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.Indigo;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Indigo;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView_ProductPage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView_ProductPage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_ProductPage.Columns.AddRange(new DataGridViewColumn[] { prod_Id, Prod_name, qnty, prod_price, prod_description, prod_cat, date });
+            dataGridView_ProductPage.EnableHeadersVisualStyles = false;
+            dataGridView_ProductPage.GridColor = Color.MediumPurple;
+            dataGridView_ProductPage.Location = new Point(0, 0);
+            dataGridView_ProductPage.Name = "dataGridView_ProductPage";
+            dataGridView_ProductPage.RowTemplate.Height = 25;
+            dataGridView_ProductPage.Size = new Size(746, 540);
+            dataGridView_ProductPage.TabIndex = 40;
+            dataGridView_ProductPage.CellClick += dataGridView_ProductPage_CellContentClick;
+            dataGridView_ProductPage.CellContentClick += dataGridView_ProductPage_CellContentClick;
             // 
-            // panel2
+            // prod_Id
             // 
-            panel2.BackColor = Color.Indigo;
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 789);
-            panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1279, 21);
-            panel2.TabIndex = 28;
+            prod_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_Id.DividerWidth = 1;
+            prod_Id.FillWeight = 50F;
+            prod_Id.HeaderText = "Product ID";
+            prod_Id.Name = "prod_Id";
             // 
-            // catgryLabel
+            // Prod_name
             // 
-            catgryLabel.AutoSize = true;
-            catgryLabel.ForeColor = Color.Indigo;
-            catgryLabel.Location = new Point(62, 513);
-            catgryLabel.Name = "catgryLabel";
-            catgryLabel.Size = new Size(55, 15);
-            catgryLabel.TabIndex = 29;
-            catgryLabel.Text = "Category";
+            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Prod_name.FillWeight = 50F;
+            Prod_name.HeaderText = "Product Name";
+            Prod_name.Name = "Prod_name";
+            // 
+            // qnty
+            // 
+            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            qnty.FillWeight = 50F;
+            qnty.HeaderText = "Quantity";
+            qnty.Name = "qnty";
+            // 
+            // prod_price
+            // 
+            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            prod_price.FillWeight = 50F;
+            prod_price.HeaderText = "Price";
+            prod_price.Name = "prod_price";
+            prod_price.Width = 58;
+            // 
+            // prod_description
+            // 
+            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            prod_description.FillWeight = 50F;
+            prod_description.HeaderText = "Description";
+            prod_description.Name = "prod_description";
+            prod_description.Width = 92;
+            // 
+            // prod_cat
+            // 
+            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_cat.FillWeight = 50F;
+            prod_cat.HeaderText = "Category";
+            prod_cat.Name = "prod_cat";
+            // 
+            // date
+            // 
+            date.HeaderText = "Date";
+            date.Name = "date";
+            // 
+            // customizedPanel1
+            // 
+            customizedPanel1.BackColor = Color.White;
+            customizedPanel1.BorderRadius = 30;
+            customizedPanel1.Controls.Add(dataGridView_ProductPage);
+            customizedPanel1.ForeColor = Color.Black;
+            customizedPanel1.GradientAngle = 90F;
+            customizedPanel1.GradientBottomColor = Color.CadetBlue;
+            customizedPanel1.GradientTopColor = Color.DodgerBlue;
+            customizedPanel1.Location = new Point(480, 176);
+            customizedPanel1.Name = "customizedPanel1";
+            customizedPanel1.Size = new Size(746, 540);
+            customizedPanel1.TabIndex = 31;
+            // 
+            // prodIdLabel
+            // 
+            prodIdLabel.AutoSize = true;
+            prodIdLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            prodIdLabel.Location = new Point(46, 128);
+            prodIdLabel.Name = "prodIdLabel";
+            prodIdLabel.Size = new Size(82, 20);
+            prodIdLabel.TabIndex = 35;
+            prodIdLabel.Text = "Product ID";
+            prodIdLabel.Click += prodIdLabel_Click;
+            // 
+            // productNameLabel
+            // 
+            productNameLabel.AutoSize = true;
+            productNameLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            productNameLabel.Location = new Point(45, 220);
+            productNameLabel.Name = "productNameLabel";
+            productNameLabel.Size = new Size(108, 20);
+            productNameLabel.TabIndex = 36;
+            productNameLabel.Text = "Product Name";
+            productNameLabel.Click += productNameLabel_Click;
+            // 
+            // productQuantityLabel
+            // 
+            productQuantityLabel.AutoSize = true;
+            productQuantityLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            productQuantityLabel.Location = new Point(45, 308);
+            productQuantityLabel.Name = "productQuantityLabel";
+            productQuantityLabel.Size = new Size(126, 20);
+            productQuantityLabel.TabIndex = 37;
+            productQuantityLabel.Text = "Product Quantity";
+            // 
+            // priceLabel
+            // 
+            priceLabel.AutoSize = true;
+            priceLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            priceLabel.Location = new Point(46, 392);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new Size(43, 20);
+            priceLabel.TabIndex = 38;
+            priceLabel.Text = "Price";
+            // 
+            // descriptionLabel
+            // 
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            descriptionLabel.Location = new Point(46, 480);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new Size(87, 20);
+            descriptionLabel.TabIndex = 39;
+            descriptionLabel.Text = "Description";
+            // 
+            // categoryLabel
+            // 
+            categoryLabel.AutoSize = true;
+            categoryLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            categoryLabel.Location = new Point(45, 564);
+            categoryLabel.Name = "categoryLabel";
+            categoryLabel.Size = new Size(72, 20);
+            categoryLabel.TabIndex = 40;
+            categoryLabel.Text = "Category";
+            // 
+            // customizedPanel2
+            // 
+            customizedPanel2.BackColor = Color.Thistle;
+            customizedPanel2.BorderRadius = 30;
+            customizedPanel2.Controls.Add(searchBar);
+            customizedPanel2.Controls.Add(searchBtn);
+            customizedPanel2.ForeColor = Color.Black;
+            customizedPanel2.GradientAngle = 90F;
+            customizedPanel2.GradientBottomColor = Color.MediumPurple;
+            customizedPanel2.GradientTopColor = Color.Violet;
+            customizedPanel2.Location = new Point(914, 131);
+            customizedPanel2.Name = "customizedPanel2";
+            customizedPanel2.Size = new Size(312, 35);
+            customizedPanel2.TabIndex = 41;
+            // 
+            // searchBar
+            // 
+            searchBar.AccessibleName = "searchBar";
+            searchBar.BackColor = Color.Thistle;
+            searchBar.Font = new Font("Segoe UI Variable Small", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            searchBar.Location = new Point(0, -1);
+            searchBar.Name = "searchBar";
+            searchBar.PlaceholderText = "Search";
+            searchBar.Size = new Size(279, 35);
+            searchBar.TabIndex = 42;
+            searchBar.TextChanged += username_TextChanged;
+            // 
+            // searchBtn
+            // 
+            searchBtn.AccessibleName = "searchBtn";
+            searchBtn.BackColor = Color.Transparent;
+            searchBtn.BackgroundImage = (Image)resources.GetObject("searchBtn.BackgroundImage");
+            searchBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            searchBtn.FlatStyle = FlatStyle.Popup;
+            searchBtn.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            searchBtn.ForeColor = Color.GhostWhite;
+            searchBtn.ImageAlign = ContentAlignment.MiddleRight;
+            searchBtn.Location = new Point(277, 0);
+            searchBtn.Margin = new Padding(3, 2, 3, 2);
+            searchBtn.Name = "searchBtn";
+            searchBtn.Size = new Size(35, 36);
+            searchBtn.TabIndex = 42;
+            searchBtn.UseVisualStyleBackColor = false;
+            searchBtn.Click += searchBtn_Click;
+            // 
+            // TitleLabel
+            // 
+            TitleLabel.AutoSize = true;
+            TitleLabel.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            TitleLabel.ForeColor = Color.Indigo;
+            TitleLabel.Location = new Point(375, 24);
+            TitleLabel.Name = "TitleLabel";
+            TitleLabel.Size = new Size(520, 36);
+            TitleLabel.TabIndex = 0;
+            TitleLabel.Text = "Staketory Management System";
+            // 
+            // mng_productLabel
+            // 
+            mng_productLabel.AutoSize = true;
+            mng_productLabel.BackColor = Color.Transparent;
+            mng_productLabel.Font = new Font("Footlight MT Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mng_productLabel.ForeColor = Color.Indigo;
+            mng_productLabel.Location = new Point(541, 69);
+            mng_productLabel.Name = "mng_productLabel";
+            mng_productLabel.Size = new Size(197, 29);
+            mng_productLabel.TabIndex = 2;
+            mng_productLabel.Text = "Manage Product";
+            // 
+            // MngProductPanel
+            // 
+            MngProductPanel.BackColor = Color.Transparent;
+            MngProductPanel.BackgroundImageLayout = ImageLayout.Zoom;
+            MngProductPanel.BorderRadius = 30;
+            MngProductPanel.Controls.Add(closeProductButton);
+            MngProductPanel.Controls.Add(mng_productLabel);
+            MngProductPanel.Controls.Add(TitleLabel);
+            MngProductPanel.Dock = DockStyle.Top;
+            MngProductPanel.ForeColor = Color.Black;
+            MngProductPanel.GradientAngle = 90F;
+            MngProductPanel.GradientBottomColor = Color.MediumPurple;
+            MngProductPanel.GradientTopColor = Color.Violet;
+            MngProductPanel.Location = new Point(0, 0);
+            MngProductPanel.Name = "MngProductPanel";
+            MngProductPanel.Size = new Size(1279, 125);
+            MngProductPanel.TabIndex = 32;
+            MngProductPanel.Paint += MngProductPanel_Paint;
+            // 
+            // closeProductButton
+            // 
+            closeProductButton.AccessibleName = "searchBtn";
+            closeProductButton.BackColor = Color.Transparent;
+            closeProductButton.BackgroundImage = (Image)resources.GetObject("closeProductButton.BackgroundImage");
+            closeProductButton.BackgroundImageLayout = ImageLayout.Stretch;
+            closeProductButton.FlatStyle = FlatStyle.Flat;
+            closeProductButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            closeProductButton.ForeColor = Color.Transparent;
+            closeProductButton.ImageAlign = ContentAlignment.MiddleRight;
+            closeProductButton.Location = new Point(1242, 2);
+            closeProductButton.Margin = new Padding(3, 2, 3, 2);
+            closeProductButton.Name = "closeProductButton";
+            closeProductButton.Size = new Size(34, 32);
+            closeProductButton.TabIndex = 43;
+            closeProductButton.UseVisualStyleBackColor = false;
+            closeProductButton.Click += closeProductButton_Click;
+            // 
+            // productLowerDockPanel
+            // 
+            productLowerDockPanel.BackColor = Color.White;
+            productLowerDockPanel.BorderRadius = 30;
+            productLowerDockPanel.ForeColor = Color.Black;
+            productLowerDockPanel.GradientAngle = 90F;
+            productLowerDockPanel.GradientBottomColor = Color.Violet;
+            productLowerDockPanel.GradientTopColor = Color.MediumPurple;
+            productLowerDockPanel.Location = new Point(0, 747);
+            productLowerDockPanel.Name = "productLowerDockPanel";
+            productLowerDockPanel.Size = new Size(1279, 63);
+            productLowerDockPanel.TabIndex = 33;
             // 
             // ProductPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MediumPurple;
-            Controls.Add(catgryLabel);
-            Controls.Add(panel2);
-            Controls.Add(listView1);
+            BackColor = Color.White;
+            Controls.Add(customizedPanel2);
+            Controls.Add(categoryLabel);
+            Controls.Add(descriptionLabel);
+            Controls.Add(priceLabel);
+            Controls.Add(productQuantityLabel);
+            Controls.Add(productNameLabel);
+            Controls.Add(prodIdLabel);
+            Controls.Add(productLowerDockPanel);
+            Controls.Add(MngProductPanel);
+            Controls.Add(customizedPanel1);
             Controls.Add(editBtn);
             Controls.Add(deleteBtn);
             Controls.Add(addBtn);
             Controls.Add(categories);
-            Controls.Add(panel1);
             Controls.Add(description);
             Controls.Add(price);
             Controls.Add(productQuantity);
             Controls.Add(productName);
             Controls.Add(product_Id);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "ProductPage";
             Size = new Size(1279, 810);
             Load += ProductPage_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_ProductPage).EndInit();
+            customizedPanel1.ResumeLayout(false);
+            customizedPanel2.ResumeLayout(false);
+            customizedPanel2.PerformLayout();
+            MngProductPanel.ResumeLayout(false);
+            MngProductPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,15 +482,32 @@
         private TextBox product_Id;
         private TextBox description;
         private TextBox price;
-        private Panel panel1;
-        private Label mng_productLabel;
-        private Label label1;
         private ComboBox categories;
         private Button editBtn;
         private Button deleteBtn;
         private Button addBtn;
-        private ListView listView1;
-        private Panel panel2;
-        private Label catgryLabel;
+        private DataGridView dataGridView_ProductPage;
+        private CustomizedPanel customizedPanel1;
+        private Label prodIdLabel;
+        private Label productNameLabel;
+        private Label productQuantityLabel;
+        private Label priceLabel;
+        private Label descriptionLabel;
+        private Label categoryLabel;
+        private DataGridViewTextBoxColumn prod_Id;
+        private DataGridViewTextBoxColumn Prod_name;
+        private DataGridViewTextBoxColumn qnty;
+        private DataGridViewTextBoxColumn prod_price;
+        private DataGridViewTextBoxColumn prod_description;
+        private DataGridViewTextBoxColumn prod_cat;
+        private DataGridViewTextBoxColumn date;
+        private CustomizedPanel customizedPanel2;
+        private Button searchBtn;
+        private TextBox searchBar;
+        private Label TitleLabel;
+        private Label mng_productLabel;
+        private CustomizedPanel MngProductPanel;
+        private Button closeProductButton;
+        private CustomizedPanel productLowerDockPanel;
     }
 }

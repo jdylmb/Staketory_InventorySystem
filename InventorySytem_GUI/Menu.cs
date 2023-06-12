@@ -7,29 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace InventorySytem_GUI
 {
-    public partial class Form2 : Form
+    public partial class Menu : Form
     {
-        public Form2()
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
+
+        bool sidebarExpand;
+        public Menu()
         {
             InitializeComponent();
             InitializeScreens();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void InitializeScreens()
         {
             userPage1.Show();
             productPage1.Hide();
-            categoriesPage1.Hide();
+            reportPage1.Hide();
         }
 
 
         private void userButton_Click(object sender, EventArgs e)
         {
             // Hide other user control
-            categoriesPage1.Hide();
+            reportPage1.Hide();
             userPage1.Show();
             productPage1.Hide();
             // Show the current user control which is the UserPage
@@ -38,7 +55,7 @@ namespace InventorySytem_GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            categoriesPage1.Show();
+            reportPage1.Show();
             userPage1.Hide();
             productPage1.Hide();
         }
@@ -59,12 +76,12 @@ namespace InventorySytem_GUI
 
         private void productButton_Click(object sender, EventArgs e)
         {
-            categoriesPage1.Hide();
+            reportPage1.Hide();
             userPage1.Hide();
             productPage1.Show();
         }
 
-        private void categoriesPage1_Load(object sender, EventArgs e)
+        private void reportPage1_Load(object sender, EventArgs e)
         {
 
         }
@@ -72,6 +89,58 @@ namespace InventorySytem_GUI
         private void categoriesPage2_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void userLabel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customizedPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sideBarTimer_Tick(object sender, EventArgs e)
+        {
+            //set the maximum and minimum size of the sidebar panel
+            if (sidebarExpand)
+            {
+                // if sidebar is expanded, minimize
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    sideBarTimer.Stop();
+                }
+            }
+            else
+                sidebar.Width += 10;
+            if (sidebar.Width == sidebar.MaximumSize.Width)
+            {
+                sidebarExpand = true;
+                sideBarTimer.Stop();
+            }
+        }
+
+        private void menuButton_Click(object sender, EventArgs e)
+        {
+            sideBarTimer.Start();
         }
     }
 }

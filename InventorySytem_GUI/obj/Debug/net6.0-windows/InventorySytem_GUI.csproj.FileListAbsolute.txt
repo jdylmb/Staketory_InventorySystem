@@ -113,10 +113,7 @@ C:\Users\User\source\repos\InventorySytem_GUI\obj\Debug\net6.0-windows\Inventory
 C:\Users\User\source\repos\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.UserPage.resources
 C:\Users\User\source\repos\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.CategoriesPage.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.csproj.AssemblyReference.cache
-C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.CategoriesPage.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.LogInForm.resources
-C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.ManageUsers.resources
-C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.Form2.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.ProductPage.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.Properties.Resources.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.UserPage.resources
@@ -227,3 +224,8 @@ C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debu
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.genruntimeconfig.cache
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\ref\InventorySytem_GUI.dll
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.Start.resources
+C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.Menu.resources
+C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.UserControl1.resources
+C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.ReportPage.resources
+C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
+C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll

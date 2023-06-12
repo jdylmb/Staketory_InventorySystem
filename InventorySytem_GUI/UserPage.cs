@@ -25,19 +25,15 @@ namespace InventorySytem_GUI
 
         public void FetchUsers()
         {
-            listView1.Items.Clear();
             UserManagement userManagement = new UserManagement("user.json");
             List<User> users = userManagement.GetUsers();
 
             users.ForEach(u =>
             {
                 ListViewItem item = new ListViewItem(u.username);
-                ListViewItem item2 = new ListViewItem(u.password);
-                ListViewItem item3 = new ListViewItem(u.fullName);
+                ListViewItem item2 = new ListViewItem(u.fullName);
+                ListViewItem item3 = new ListViewItem(u.password);
 
-                listView1.Items.Add(item);
-                listView1.Items.Add(item2);
-                listView1.Items.Add(item3);
             });
         }
 
@@ -63,16 +59,6 @@ namespace InventorySytem_GUI
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Adding Users");
-
-            UserManagement userManagement = new UserManagement("user.json");
-            bool isSuccess = userManagement.CreateAccount(username.Text, password.Text, fullName.Text);
-
-            if (isSuccess)
-            {
-                MessageBox.Show($"Account successfully created!");
-                FetchUsers();
-            }
         }
 
         private void ManageUsers_Load(object sender, EventArgs e)
@@ -109,11 +95,21 @@ namespace InventorySytem_GUI
         private void deleteBtn_Click(object sender, EventArgs e)
         {
 
-            this.userManagement.DeleteItem(username.Text);
+            /* this.userManagement.DeleteItem(username.Text);
 
-            MessageBox.Show($"User successfully deleted!");
+             MessageBox.Show($"User successfully deleted!");
 
-            FetchProducts();
+             FetchProducts();*/
+        }
+
+        private void dataGridView_ProductPage_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void MngProductPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

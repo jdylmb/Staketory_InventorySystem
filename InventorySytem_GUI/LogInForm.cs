@@ -1,4 +1,6 @@
 using StakeTory_InventorySystem;
+using System.Runtime.InteropServices;
+
 namespace InventorySytem_GUI
 {
     public partial class LogInForm : Form
@@ -6,10 +8,24 @@ namespace InventorySytem_GUI
         private string usernameText;
         private string passwordText;
 
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
         public LogInForm
             ()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,19 +67,19 @@ namespace InventorySytem_GUI
         {
             if (showPassword.Checked == true)
             {
-                Password.UseSystemPasswordChar = false;
+                password.UseSystemPasswordChar = false;
             }
             else
             {
-                Password.UseSystemPasswordChar = true;
+                password.UseSystemPasswordChar = true;
             }
         }
 
 
-        private void label3_Click_1(object sender, EventArgs e)
+        private void clear_Click(object sender, EventArgs e)
         {
             username.Text = "";
-            Password.Text = "";
+            password.Text = "";
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -82,11 +98,42 @@ namespace InventorySytem_GUI
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            UserManagement userInventory = new UserManagement("users.json");
+            UserManagement userInventory = new UserManagement("user.json");
 
-            userInventory.Login(username.Text, this.passwordText);
+            bool isSuccess = userInventory.Login(username.Text, password.Text);
 
-            MessageBox.Show($"Log In Successfully!");
+            if (isSuccess == true)
+            {
+                MessageBox.Show($"Log In Successfully!", "Log In");
+                WindowNavigator windowNavigator = new WindowNavigator();
+                windowNavigator.ShowMenu();
+            }
+            else
+            {
+                MessageBox.Show($"Log In Failed!", "Log In");
+            }
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+            if (showPassword.Checked == true)
+            {
+                password.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                password.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void usernameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void username_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
