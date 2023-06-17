@@ -13,7 +13,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace InventorySytem_GUI
 {
-    public partial class ProductPage : UserControl
+    public partial class ProductPage : 
+        UserControl
     {
         private ProductManagement productManagement;
         private int selectedIndex = -1;
@@ -124,6 +125,16 @@ namespace InventorySytem_GUI
             }
         }
 
+        private void filteredProducts(List<Product> products)
+        {
+            dataGridView_ProductPage.Rows.Clear();
+
+            foreach (Product product in products)
+            {
+                dataGridView_ProductPage.Rows.Add(new object[] { product.Code, product.Name, product.Quantity, product.Price, product.Description, product.Category, product.dateUpdated });
+            }
+        }
+
         private void MngProductPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -156,7 +167,9 @@ namespace InventorySytem_GUI
 
         private void username_TextChanged(object sender, EventArgs e)
         {
+            List<Product> products = productManagement.FilterItems(searchBar.Text);
 
+            filteredProducts(products);
         }
 
         private void closeProductButton_Click(object sender, EventArgs e)

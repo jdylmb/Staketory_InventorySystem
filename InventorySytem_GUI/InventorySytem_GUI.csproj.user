@@ -22,8 +22,5 @@
     <Compile Update="UserControl1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="UserPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

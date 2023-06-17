@@ -110,6 +110,16 @@ namespace StakeTory_InventorySystem
             return inventory.Find(item => item.Code.Equals(code, StringComparison.OrdinalIgnoreCase));
         }
 
+        public List<Product> FilterItems(string searchString)
+        {
+            searchString = searchString.ToLower();
+            return inventory.FindAll(item =>
+                item.Code.ToLower().Contains(searchString) ||
+                item.Name.ToLower().Contains(searchString));
+
+
+        }
+
         public void DeleteItem(string code)
         {
             Product productToRemove = inventory.Find(item => item.Code.Equals(code, StringComparison.OrdinalIgnoreCase));

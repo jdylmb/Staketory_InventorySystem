@@ -37,26 +37,14 @@ namespace InventorySytem_GUI
 
         private void InitializeScreens()
         {
-            userPage1.Show();
             productPage1.Hide();
-            reportPage1.Hide();
+            reportPage1.Show();
         }
 
 
-        private void userButton_Click(object sender, EventArgs e)
-        {
-            // Hide other user control
-            reportPage1.Hide();
-            userPage1.Show();
-            productPage1.Hide();
-            // Show the current user control which is the UserPage
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void reportButton_Click(object sender, EventArgs e)
         {
             reportPage1.Show();
-            userPage1.Hide();
             productPage1.Hide();
         }
 
@@ -77,7 +65,6 @@ namespace InventorySytem_GUI
         private void productButton_Click(object sender, EventArgs e)
         {
             reportPage1.Hide();
-            userPage1.Hide();
             productPage1.Show();
         }
 
@@ -141,6 +128,16 @@ namespace InventorySytem_GUI
         private void menuButton_Click(object sender, EventArgs e)
         {
             sideBarTimer.Start();
+        }
+
+        private void reportPage1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productPage1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

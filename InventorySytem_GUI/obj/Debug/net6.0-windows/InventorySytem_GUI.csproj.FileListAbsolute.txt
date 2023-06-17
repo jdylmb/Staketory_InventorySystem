@@ -116,7 +116,6 @@ C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debu
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.LogInForm.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.ProductPage.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.Properties.Resources.resources
-C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.UserPage.resources
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.csproj.GenerateResource.cache
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.AssemblyInfoInputs.cache

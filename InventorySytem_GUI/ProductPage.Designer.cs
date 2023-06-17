@@ -40,13 +40,6 @@
             deleteBtn = new Button();
             addBtn = new Button();
             dataGridView_ProductPage = new DataGridView();
-            prod_Id = new DataGridViewTextBoxColumn();
-            Prod_name = new DataGridViewTextBoxColumn();
-            qnty = new DataGridViewTextBoxColumn();
-            prod_price = new DataGridViewTextBoxColumn();
-            prod_description = new DataGridViewTextBoxColumn();
-            prod_cat = new DataGridViewTextBoxColumn();
-            date = new DataGridViewTextBoxColumn();
             customizedPanel1 = new CustomizedPanel();
             prodIdLabel = new Label();
             productNameLabel = new Label();
@@ -55,16 +48,24 @@
             descriptionLabel = new Label();
             categoryLabel = new Label();
             customizedPanel2 = new CustomizedPanel();
+            searchPic = new PictureBox();
             searchBar = new TextBox();
-            searchBtn = new Button();
             TitleLabel = new Label();
             mng_productLabel = new Label();
             MngProductPanel = new CustomizedPanel();
             closeProductButton = new Button();
             productLowerDockPanel = new CustomizedPanel();
+            date = new DataGridViewTextBoxColumn();
+            prod_cat = new DataGridViewTextBoxColumn();
+            prod_description = new DataGridViewTextBoxColumn();
+            prod_price = new DataGridViewTextBoxColumn();
+            qnty = new DataGridViewTextBoxColumn();
+            Prod_name = new DataGridViewTextBoxColumn();
+            prod_Id = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView_ProductPage).BeginInit();
             customizedPanel1.SuspendLayout();
             customizedPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)searchPic).BeginInit();
             MngProductPanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -170,6 +171,9 @@
             // 
             // dataGridView_ProductPage
             // 
+            dataGridView_ProductPage.AllowUserToAddRows = false;
+            dataGridView_ProductPage.AllowUserToDeleteRows = false;
+            dataGridView_ProductPage.AllowUserToResizeColumns = false;
             dataGridView_ProductPage.BackgroundColor = SystemColors.Control;
             dataGridView_ProductPage.BorderStyle = BorderStyle.None;
             dataGridView_ProductPage.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
@@ -192,56 +196,6 @@
             dataGridView_ProductPage.TabIndex = 40;
             dataGridView_ProductPage.CellClick += dataGridView_ProductPage_CellContentClick;
             dataGridView_ProductPage.CellContentClick += dataGridView_ProductPage_CellContentClick;
-            // 
-            // prod_Id
-            // 
-            prod_Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            prod_Id.DividerWidth = 1;
-            prod_Id.FillWeight = 50F;
-            prod_Id.HeaderText = "Product ID";
-            prod_Id.Name = "prod_Id";
-            // 
-            // Prod_name
-            // 
-            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Prod_name.FillWeight = 50F;
-            Prod_name.HeaderText = "Product Name";
-            Prod_name.Name = "Prod_name";
-            // 
-            // qnty
-            // 
-            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            qnty.FillWeight = 50F;
-            qnty.HeaderText = "Quantity";
-            qnty.Name = "qnty";
-            // 
-            // prod_price
-            // 
-            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            prod_price.FillWeight = 50F;
-            prod_price.HeaderText = "Price";
-            prod_price.Name = "prod_price";
-            prod_price.Width = 58;
-            // 
-            // prod_description
-            // 
-            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            prod_description.FillWeight = 50F;
-            prod_description.HeaderText = "Description";
-            prod_description.Name = "prod_description";
-            prod_description.Width = 92;
-            // 
-            // prod_cat
-            // 
-            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            prod_cat.FillWeight = 50F;
-            prod_cat.HeaderText = "Category";
-            prod_cat.Name = "prod_cat";
-            // 
-            // date
-            // 
-            date.HeaderText = "Date";
-            date.Name = "date";
             // 
             // customizedPanel1
             // 
@@ -321,48 +275,40 @@
             // 
             // customizedPanel2
             // 
-            customizedPanel2.BackColor = Color.Thistle;
+            customizedPanel2.BackColor = Color.Transparent;
             customizedPanel2.BorderRadius = 30;
+            customizedPanel2.Controls.Add(searchPic);
             customizedPanel2.Controls.Add(searchBar);
-            customizedPanel2.Controls.Add(searchBtn);
             customizedPanel2.ForeColor = Color.Black;
             customizedPanel2.GradientAngle = 90F;
             customizedPanel2.GradientBottomColor = Color.MediumPurple;
             customizedPanel2.GradientTopColor = Color.Violet;
-            customizedPanel2.Location = new Point(914, 131);
+            customizedPanel2.Location = new Point(910, 131);
             customizedPanel2.Name = "customizedPanel2";
-            customizedPanel2.Size = new Size(312, 35);
+            customizedPanel2.Size = new Size(307, 35);
             customizedPanel2.TabIndex = 41;
+            // 
+            // searchPic
+            // 
+            searchPic.BackgroundImage = (Image)resources.GetObject("searchPic.BackgroundImage");
+            searchPic.BackgroundImageLayout = ImageLayout.Center;
+            searchPic.Location = new Point(270, 0);
+            searchPic.Name = "searchPic";
+            searchPic.Size = new Size(37, 35);
+            searchPic.SizeMode = PictureBoxSizeMode.StretchImage;
+            searchPic.TabIndex = 43;
+            searchPic.TabStop = false;
             // 
             // searchBar
             // 
             searchBar.AccessibleName = "searchBar";
-            searchBar.BackColor = Color.Thistle;
-            searchBar.Font = new Font("Segoe UI Variable Small", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            searchBar.Location = new Point(0, -1);
+            searchBar.Font = new Font("Segoe UI Variable Small", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            searchBar.Location = new Point(16, 3);
             searchBar.Name = "searchBar";
             searchBar.PlaceholderText = "Search";
-            searchBar.Size = new Size(279, 35);
+            searchBar.Size = new Size(251, 29);
             searchBar.TabIndex = 42;
             searchBar.TextChanged += username_TextChanged;
-            // 
-            // searchBtn
-            // 
-            searchBtn.AccessibleName = "searchBtn";
-            searchBtn.BackColor = Color.Transparent;
-            searchBtn.BackgroundImage = (Image)resources.GetObject("searchBtn.BackgroundImage");
-            searchBtn.BackgroundImageLayout = ImageLayout.Stretch;
-            searchBtn.FlatStyle = FlatStyle.Popup;
-            searchBtn.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            searchBtn.ForeColor = Color.GhostWhite;
-            searchBtn.ImageAlign = ContentAlignment.MiddleRight;
-            searchBtn.Location = new Point(277, 0);
-            searchBtn.Margin = new Padding(3, 2, 3, 2);
-            searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(35, 36);
-            searchBtn.TabIndex = 42;
-            searchBtn.UseVisualStyleBackColor = false;
-            searchBtn.Click += searchBtn_Click;
             // 
             // TitleLabel
             // 
@@ -437,6 +383,57 @@
             productLowerDockPanel.Size = new Size(1279, 63);
             productLowerDockPanel.TabIndex = 33;
             // 
+            // date
+            // 
+            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            date.HeaderText = "Date";
+            date.Name = "date";
+            // 
+            // prod_cat
+            // 
+            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_cat.FillWeight = 50F;
+            prod_cat.HeaderText = "Category";
+            prod_cat.Name = "prod_cat";
+            // 
+            // prod_description
+            // 
+            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            prod_description.FillWeight = 50F;
+            prod_description.HeaderText = "Description";
+            prod_description.Name = "prod_description";
+            prod_description.Width = 92;
+            // 
+            // prod_price
+            // 
+            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            prod_price.FillWeight = 50F;
+            prod_price.HeaderText = "Price";
+            prod_price.Name = "prod_price";
+            prod_price.Width = 58;
+            // 
+            // qnty
+            // 
+            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            qnty.FillWeight = 50F;
+            qnty.HeaderText = "Quantity";
+            qnty.Name = "qnty";
+            // 
+            // Prod_name
+            // 
+            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Prod_name.FillWeight = 50F;
+            Prod_name.HeaderText = "Product Name";
+            Prod_name.Name = "Prod_name";
+            // 
+            // prod_Id
+            // 
+            prod_Id.DividerWidth = 1;
+            prod_Id.FillWeight = 60F;
+            prod_Id.HeaderText = "Product ID";
+            prod_Id.Name = "prod_Id";
+            prod_Id.Width = 107;
+            // 
             // ProductPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -469,6 +466,7 @@
             customizedPanel1.ResumeLayout(false);
             customizedPanel2.ResumeLayout(false);
             customizedPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)searchPic).EndInit();
             MngProductPanel.ResumeLayout(false);
             MngProductPanel.PerformLayout();
             ResumeLayout(false);
@@ -494,6 +492,14 @@
         private Label priceLabel;
         private Label descriptionLabel;
         private Label categoryLabel;
+        private CustomizedPanel customizedPanel2;
+        private Label TitleLabel;
+        private Label mng_productLabel;
+        private CustomizedPanel MngProductPanel;
+        private Button closeProductButton;
+        private CustomizedPanel productLowerDockPanel;
+        private TextBox searchBar;
+        private PictureBox searchPic;
         private DataGridViewTextBoxColumn prod_Id;
         private DataGridViewTextBoxColumn Prod_name;
         private DataGridViewTextBoxColumn qnty;
@@ -501,13 +507,5 @@
         private DataGridViewTextBoxColumn prod_description;
         private DataGridViewTextBoxColumn prod_cat;
         private DataGridViewTextBoxColumn date;
-        private CustomizedPanel customizedPanel2;
-        private Button searchBtn;
-        private TextBox searchBar;
-        private Label TitleLabel;
-        private Label mng_productLabel;
-        private CustomizedPanel MngProductPanel;
-        private Button closeProductButton;
-        private CustomizedPanel productLowerDockPanel;
     }
 }

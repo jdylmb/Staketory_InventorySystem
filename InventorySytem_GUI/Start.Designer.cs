@@ -51,7 +51,7 @@
             customizedPanel1.GradientAngle = 90F;
             customizedPanel1.GradientBottomColor = Color.MediumPurple;
             customizedPanel1.GradientTopColor = Color.Violet;
-            customizedPanel1.Location = new Point(332, 605);
+            customizedPanel1.Location = new Point(323, 605);
             customizedPanel1.Name = "customizedPanel1";
             customizedPanel1.Size = new Size(616, 25);
             customizedPanel1.TabIndex = 1;

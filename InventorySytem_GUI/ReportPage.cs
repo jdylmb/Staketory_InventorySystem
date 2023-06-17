@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StakeTory_InventorySystem;
+using System;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -7,35 +8,60 @@ namespace InventorySytem_GUI
     public partial class ReportPage : UserControl
     {
 
+        private SalesManagement salesManagement;
+
         public ReportPage()
         {
+            salesManagement = new SalesManagement("sales.json");
             InitializeComponent();
             // Generate the chart data and populate the chart
             GenerateChart();
+
         }
 
         private void GenerateChart()
         {
             // Add sample data points to the chart
-            chart1.Series.Add("Sales");
-            chart1.Series["Sales"].ChartType = SeriesChartType.Line;
-            chart1.Series["Sales"].Points.AddXY("Jan", 50);
-            chart1.Series["Sales"].Points.AddXY("Feb", 70);
-            chart1.Series["Sales"].Points.AddXY("Mar", 65);
-            chart1.Series["Sales"].Points.AddXY("Apr", 80);
-            chart1.Series["Sales"].Points.AddXY("May", 90);
-            chart1.Series["Sales"].Points.AddXY("Jun", 75);
-            chart1.Series["Sales"].Points.AddXY("Jul", 85);
-            chart1.Series["Sales"].Points.AddXY("Aug", 60);
-            chart1.Series["Sales"].Points.AddXY("Sep", 95);
-            chart1.Series["Sales"].Points.AddXY("Oct", 80);
-            chart1.Series["Sales"].Points.AddXY("Nov", 70);
-            chart1.Series["Sales"].Points.AddXY("Dec", 90);
+            SalesData[] salesDataArray = this.salesManagement.CalculateTotalSalesPerMonth();
+
+            monthlySales.Series.Add("Sales");
+            monthlySales.Series["Sales"].ChartType = SeriesChartType.Line;
+            foreach (SalesData data in salesDataArray)
+            {
+                string month = data.Month;
+                double totalSales = data.TotalSales;
+                monthlySales.Series["Sales"].Points.AddXY(month, totalSales);
+                Console.WriteLine($"Month: {month}, Total Sales: {totalSales}");
+            }
 
             // Set chart title and axis labels
-            chart1.Titles.Add("Monthly Sales");
-            chart1.ChartAreas[0].AxisX.Title = "Month";
-            chart1.ChartAreas[0].AxisY.Title = "Sales";
+            monthlySales.ChartAreas[0].AxisX.Title = "Month";
+            monthlySales.ChartAreas[0].AxisY.Title = "Sales";
+
+            salesDataArray = this.salesManagement.GenerateWeeklySalesReport();
+
+            weeklySalesChart.Series.Add("Sales");
+            weeklySalesChart.Series["Sales"].ChartType = SeriesChartType.Line;
+            foreach (SalesData data in salesDataArray)
+            {
+                string month = data.Month;
+                double totalSales = data.TotalSales;
+                weeklySalesChart.Series["Sales"].Points.AddXY(month, totalSales);
+                Console.WriteLine($"Month: {month}, Total Sales: {totalSales}");
+            }
+
+            // Set chart title and axis labels
+            weeklySalesChart.ChartAreas[0].AxisX.Title = "Week";
+            weeklySalesChart.ChartAreas[0].AxisY.Title = "Sales";
+
+            DateTime currentDateTime = DateTime.Now;
+            string currentMonthYear = currentDateTime.ToString("yyyy-MM");
+
+            Product topProduct = this.salesManagement.GetHighestSellingProductOfMonth(currentMonthYear);
+            label1.Text += " " + topProduct.Name;
+            topSalesAmount.Text += topProduct.Price.ToString("0.00");
+
+            totalSales.Text += this.salesManagement.CalculateTotalSales().ToString("0.00");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -51,6 +77,56 @@ namespace InventorySytem_GUI
             {
                 Application.Exit();
             }
+
+        }
+
+        private void weeklySales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthlySales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void week_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReportPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReportPage_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customizedPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }
