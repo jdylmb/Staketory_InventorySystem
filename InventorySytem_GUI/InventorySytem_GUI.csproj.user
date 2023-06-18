@@ -16,11 +16,11 @@
     <Compile Update="ProductPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ReportPage2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Start.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="UserControl1.cs">
-      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

@@ -34,11 +34,10 @@
             productButton = new Button();
             reportButton = new Button();
             sidebar = new CustomizedPanel();
-            button1 = new Button();
+            logOutButton = new Button();
             label1 = new Label();
-            reportPage1 = new ReportPage();
-
             sideBarTimer = new System.Windows.Forms.Timer(components);
+            reportPage1 = new ReportPage();
             sidebar.SuspendLayout();
             SuspendLayout();
             // 
@@ -46,10 +45,11 @@
             // 
             productPage1.BackColor = Color.White;
             productPage1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            productPage1.Location = new Point(214, 0);
+            productPage1.Location = new Point(225, 0);
             productPage1.Name = "productPage1";
             productPage1.Size = new Size(1279, 810);
             productPage1.TabIndex = 2;
+            productPage1.Load += productPage1_Load_3;
             // 
             // productButton
             // 
@@ -83,13 +83,14 @@
             reportButton.Text = "    Report";
             reportButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             reportButton.UseVisualStyleBackColor = false;
+            reportButton.Click += reportButton_Click_3;
             // 
             // sidebar
             // 
             sidebar.BackColor = Color.Transparent;
             sidebar.BorderRadius = 30;
             sidebar.BorderStyle = BorderStyle.FixedSingle;
-            sidebar.Controls.Add(button1);
+            sidebar.Controls.Add(logOutButton);
             sidebar.Controls.Add(label1);
             sidebar.Controls.Add(productButton);
             sidebar.Controls.Add(reportButton);
@@ -105,32 +106,23 @@
             sidebar.Size = new Size(228, 810);
             sidebar.TabIndex = 22;
             sidebar.Paint += customizedPanel1_Paint;
-
             // 
-            // reportPage1
+            // logOutButton
             // 
-            reportPage1.BackColor = Color.White;
-            reportPage1.Location = new Point(234, 0);
-            reportPage1.Name = "reportPage1";
-            reportPage1.Size = new Size(1279, 810);
-            reportPage1.TabIndex = 3;
-
-            // 
-            // button1
-            // 
-            button1.AccessibleName = "productButton";
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 255);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(-1, 626);
-            button1.Name = "button1";
-            button1.Size = new Size(228, 59);
-            button1.TabIndex = 43;
-            button1.Text = "    Product";
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
+            logOutButton.AccessibleName = "logOutButton";
+            logOutButton.BackColor = Color.Transparent;
+            logOutButton.FlatAppearance.BorderColor = Color.FromArgb(255, 192, 255);
+            logOutButton.FlatStyle = FlatStyle.Flat;
+            logOutButton.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            logOutButton.Image = (Image)resources.GetObject("logOutButton.Image");
+            logOutButton.Location = new Point(-1, 626);
+            logOutButton.Name = "logOutButton";
+            logOutButton.Size = new Size(228, 59);
+            logOutButton.TabIndex = 43;
+            logOutButton.Text = "    Log Out";
+            logOutButton.TextImageRelation = TextImageRelation.ImageBeforeText;
+            logOutButton.UseVisualStyleBackColor = false;
+            logOutButton.Click += logOutButton_Click;
             // 
             // label1
             // 
@@ -145,15 +137,23 @@
             // 
             sideBarTimer.Tick += sideBarTimer_Tick;
             // 
+            // reportPage1
+            // 
+            reportPage1.BackColor = Color.White;
+            reportPage1.Location = new Point(225, -4);
+            reportPage1.Name = "reportPage1";
+            reportPage1.Size = new Size(1279, 810);
+            reportPage1.TabIndex = 44;
+            // 
             // Menu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1489, 810);
+            Controls.Add(reportPage1);
             Controls.Add(sidebar);
             Controls.Add(productPage1);
-            Controls.Add(reportPage1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Menu";
             Text = "Menu";
@@ -165,13 +165,13 @@
 
         #endregion
         private ProductPage productPage1;
-        private ReportPage categoriesPage1;
         private Button productButton;
         private Button reportButton;
         private CustomizedPanel sidebar;
         private Label label1;
         private System.Windows.Forms.Timer sideBarTimer;
+        private Button logOutButton;
+        private ReportPage reportPage3;
         private ReportPage reportPage1;
-        private Button button1;
     }
 }

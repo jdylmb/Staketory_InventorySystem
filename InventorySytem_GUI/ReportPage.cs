@@ -1,13 +1,10 @@
 ﻿using StakeTory_InventorySystem;
-using System;
-using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace InventorySytem_GUI
 {
     public partial class ReportPage : UserControl
     {
-
         private SalesManagement salesManagement;
 
         public ReportPage()
@@ -16,7 +13,6 @@ namespace InventorySytem_GUI
             InitializeComponent();
             // Generate the chart data and populate the chart
             GenerateChart();
-
         }
 
         private void GenerateChart()
@@ -49,6 +45,7 @@ namespace InventorySytem_GUI
                 weeklySalesChart.Series["Sales"].Points.AddXY(month, totalSales);
                 Console.WriteLine($"Month: {month}, Total Sales: {totalSales}");
             }
+            
 
             // Set chart title and axis labels
             weeklySalesChart.ChartAreas[0].AxisX.Title = "Week";
@@ -61,7 +58,9 @@ namespace InventorySytem_GUI
             label1.Text += " " + topProduct.Name;
             topSalesAmount.Text += topProduct.Price.ToString("0.00");
 
-            totalSales.Text += this.salesManagement.CalculateTotalSales().ToString("0.00");
+            double calculatedTotalSales = this.salesManagement.CalculateTotalSales();
+
+            totalSales.Text += calculatedTotalSales.ToString("0.00");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -126,6 +125,11 @@ namespace InventorySytem_GUI
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalSales_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InventorySytem_GUI
 {
-    public partial class UserControl1 : UserControl
+    public partial class ReportPage2 : UserControl
     {
-        public UserControl1()
+        public ReportPage2()
         {
             InitializeComponent();
         }

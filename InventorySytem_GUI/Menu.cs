@@ -24,7 +24,7 @@ namespace InventorySytem_GUI
             int nHeightEllipse // width of ellipse
         );
 
-
+        private Button logoutButton;
         bool sidebarExpand;
         public Menu()
         {
@@ -39,6 +39,7 @@ namespace InventorySytem_GUI
         {
             productPage1.Hide();
             reportPage1.Show();
+
         }
 
 
@@ -64,8 +65,8 @@ namespace InventorySytem_GUI
 
         private void productButton_Click(object sender, EventArgs e)
         {
-            reportPage1.Hide();
             productPage1.Show();
+            reportPage1.Hide();
         }
 
         private void reportPage1_Load(object sender, EventArgs e)
@@ -136,6 +137,48 @@ namespace InventorySytem_GUI
         }
 
         private void productPage1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        public void InitializeLogoutButton()
+        {
+            logoutButton = new Button();
+            logoutButton.Text = "Log Out";
+            logoutButton.Click += logOutButton_Click;
+
+            // Add the button to your form or container
+            // For example, if you're using a Windows Forms application:
+            this.Controls.Add(logoutButton);
+        }
+
+        private void logOutButton_Click(object sender, EventArgs e)
+        {
+            WindowNavigator.ShowLoginForm();
+        }
+
+        private void productPage1_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportButton_Click_1(object sender, EventArgs e)
+        {
+            productPage1.Hide();
+        }
+
+        private void reportButton_Click_2(object sender, EventArgs e)
+        {
+            productPage1.Hide();
+        }
+
+        private void reportButton_Click_3(object sender, EventArgs e)
+        {
+            productPage1.Hide();
+            reportPage1.Show();
+        }
+
+        private void productPage1_Load_3(object sender, EventArgs e)
         {
 
         }

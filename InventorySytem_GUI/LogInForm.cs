@@ -105,8 +105,7 @@ namespace InventorySytem_GUI
             if (isSuccess == true)
             {
                 MessageBox.Show($"Log In Successfully!", "Log In");
-                WindowNavigator windowNavigator = new WindowNavigator();
-                windowNavigator.ShowMenu();
+                WindowNavigator.ShowMenu();
             }
             else
             {
@@ -134,6 +133,17 @@ namespace InventorySytem_GUI
         private void username_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void closeLogInButton_Click(object sender, EventArgs e)
+        {
+            // verify the user wants to exit
+            DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+                closeLogInButton.Enabled = true;
+            }
         }
     }
 }

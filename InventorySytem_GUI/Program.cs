@@ -6,7 +6,6 @@ namespace InventorySytem_GUI
 {
     internal static class Program
     {
-        private static WindowNavigator windowNavigator;
         private static Start splashScreen;
 
         /// <summary>
@@ -20,8 +19,7 @@ namespace InventorySytem_GUI
             ApplicationConfiguration.Initialize();
 
             //// Initialize the window navigator and show the login form
-            //windowNavigator = new WindowNavigator();
-            //windowNavigator.ShowLoginForm();
+            WindowNavigator.ShowLoginForm();
 
             //// Show the splash screen
             //Thread splashThread = new Thread(ShowSplashScreen);
@@ -38,7 +36,7 @@ namespace InventorySytem_GUI
             //}
 
             // Run the application
-            Application.Run(new Menu());
+            Application.Run();
         }
 
         private static void ShowSplashScreen()
@@ -57,32 +55,46 @@ namespace InventorySytem_GUI
         }
     }
 
-    internal class WindowNavigator
+    public static class WindowNavigator
     {
-        private Menu menuForm;
-        private LogInForm loginForm;
+        private static Menu menuForm;
+        private static LogInForm loginForm;
         // Add more form instances as needed
 
-        public WindowNavigator()
+        public static void ShowMenu()
         {
-            // Initialize form instances
-            menuForm = new Menu();
-            loginForm = new LogInForm();
-            // Initialize more forms as needed
-        }
+            if (menuForm == null || menuForm.IsDisposed)
+            {
+                menuForm = new Menu();
+            }
 
-        public void ShowMenu()
-        {
             menuForm.Show();
-            loginForm.Close();
+
+            if (loginForm != null && !loginForm.IsDisposed)
+            {
+                loginForm.Close();
+            }
         }
 
-        public void ShowLoginForm()
+        public static void ShowLoginForm()
         {
+            if (loginForm == null || loginForm.IsDisposed)
+            {
+                loginForm = new LogInForm();
+            }
+
             loginForm.Show();
-            menuForm.Close();
+
+            if (menuForm != null && !menuForm.IsDisposed)
+            {
+                menuForm.Close();
+            }
         }
 
-        // Add more methods to show other forms as needed
+        // Add more methods as needed
+
+
     }
+
+
 }

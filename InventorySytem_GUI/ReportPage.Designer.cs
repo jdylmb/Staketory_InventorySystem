@@ -290,6 +290,7 @@
             totalSales.Size = new Size(139, 128);
             totalSales.TabIndex = 37;
             totalSales.Text = "P ";
+            totalSales.Click += totalSales_Click;
             // 
             // label5
             // 

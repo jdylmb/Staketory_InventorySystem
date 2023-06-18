@@ -44,6 +44,7 @@
             showPassword = new CheckBox();
             label2 = new Label();
             customizedPanel1 = new CustomizedPanel();
+            closeLogInButton = new Button();
             panel2.SuspendLayout();
             customizedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_img).BeginInit();
@@ -248,6 +249,24 @@
             customizedPanel1.Size = new Size(416, 557);
             customizedPanel1.TabIndex = 3;
             // 
+            // closeLogInButton
+            // 
+            closeLogInButton.AccessibleName = "logInCloseBtn";
+            closeLogInButton.BackColor = Color.Transparent;
+            closeLogInButton.BackgroundImage = (Image)resources.GetObject("closeLogInButton.BackgroundImage");
+            closeLogInButton.BackgroundImageLayout = ImageLayout.Stretch;
+            closeLogInButton.FlatStyle = FlatStyle.Popup;
+            closeLogInButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            closeLogInButton.ForeColor = Color.GhostWhite;
+            closeLogInButton.ImageAlign = ContentAlignment.MiddleRight;
+            closeLogInButton.Location = new Point(803, 2);
+            closeLogInButton.Margin = new Padding(3, 2, 3, 2);
+            closeLogInButton.Name = "closeLogInButton";
+            closeLogInButton.Size = new Size(26, 24);
+            closeLogInButton.TabIndex = 45;
+            closeLogInButton.UseVisualStyleBackColor = false;
+            closeLogInButton.Click += closeLogInButton_Click;
+            // 
             // LogInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -256,6 +275,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(832, 639);
+            Controls.Add(closeLogInButton);
             Controls.Add(customizedPanel1);
             Controls.Add(label2);
             Controls.Add(panel1);
@@ -295,5 +315,6 @@
         private TextBox password;
         private TextBox username;
         private CustomizedPanel customizedPanel2;
+        private Button closeLogInButton;
     }
 }
