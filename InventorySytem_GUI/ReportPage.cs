@@ -158,9 +158,13 @@ namespace InventorySytem_GUI
             {
                 salesManagement = new SalesManagement("sales.json");
                 // User control is being shown, perform reloading logic here
-                MessageBox.Show("Sulod");
                 GenerateChart();
             }
+        }
+
+        private void weeklySalesChart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

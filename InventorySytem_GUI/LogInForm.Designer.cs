@@ -32,7 +32,6 @@
             panel1 = new Panel();
             logInPanel = new Panel();
             pictureBox1 = new PictureBox();
-            forgotPassword = new Label();
             customizedPanel2 = new CustomizedPanel();
             LOGIN = new Button();
             passwordLabel = new Label();
@@ -75,7 +74,6 @@
             logInPanel.BackColor = Color.White;
             logInPanel.BackgroundImageLayout = ImageLayout.Stretch;
             logInPanel.Controls.Add(pictureBox1);
-            logInPanel.Controls.Add(forgotPassword);
             logInPanel.Controls.Add(customizedPanel2);
             logInPanel.Controls.Add(passwordLabel);
             logInPanel.Controls.Add(usernameLabel);
@@ -106,18 +104,6 @@
             pictureBox1.TabIndex = 43;
             pictureBox1.TabStop = false;
             // 
-            // forgotPassword
-            // 
-            forgotPassword.AccessibleDescription = "clearAll";
-            forgotPassword.AutoSize = true;
-            forgotPassword.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            forgotPassword.ForeColor = Color.DarkSlateBlue;
-            forgotPassword.Location = new Point(154, 525);
-            forgotPassword.Name = "forgotPassword";
-            forgotPassword.Size = new Size(100, 15);
-            forgotPassword.TabIndex = 42;
-            forgotPassword.Text = "Forgot Password?";
-            // 
             // customizedPanel2
             // 
             customizedPanel2.BackColor = Color.White;
@@ -127,7 +113,7 @@
             customizedPanel2.GradientAngle = 90F;
             customizedPanel2.GradientBottomColor = Color.MediumPurple;
             customizedPanel2.GradientTopColor = Color.Violet;
-            customizedPanel2.Location = new Point(124, 461);
+            customizedPanel2.Location = new Point(125, 474);
             customizedPanel2.Name = "customizedPanel2";
             customizedPanel2.Size = new Size(160, 40);
             customizedPanel2.TabIndex = 41;
@@ -142,7 +128,7 @@
             LOGIN.Location = new Point(-11, -9);
             LOGIN.Margin = new Padding(3, 2, 3, 2);
             LOGIN.Name = "LOGIN";
-            LOGIN.Size = new Size(173, 59);
+            LOGIN.Size = new Size(183, 59);
             LOGIN.TabIndex = 3;
             LOGIN.Text = "Log In";
             LOGIN.UseVisualStyleBackColor = false;
@@ -409,7 +395,6 @@
         private TextBox username;
         private CustomizedPanel customizedPanel2;
         private Button closeLogInButton;
-        private Label forgotPassword;
         private Panel createUserPanel;
         private Label signUpLabel;
         private Label accountLabel;

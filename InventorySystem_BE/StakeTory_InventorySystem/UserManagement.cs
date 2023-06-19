@@ -34,20 +34,25 @@ namespace StakeTory_InventorySystem
                 users = new List<User>();
             }
         }
-        public bool CreateAccount(string username, string password, string fullName)
+        public bool CreateAccount(string username, string password)
         {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                // Username or password is null or empty
+                return false;
+            }
             // Check if the username already exists
             if (users.Exists(item => item.username.Equals(username, StringComparison.OrdinalIgnoreCase)))
             {
                 return false;
             }
-
+            
+            
             // Create a new user account
             User newItem = new User
             {
                 username = username,
                 password = password, // You can customize this as per your requirements
-                fullName = fullName,    // You can customize this as per your requirements
             };
 
             users.Add(newItem);

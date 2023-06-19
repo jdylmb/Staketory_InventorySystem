@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportPage));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             mng_reportLabel = new Label();
             MngProductPanel = new CustomizedPanel();
             closeReportButton = new Button();
@@ -102,7 +102,7 @@
             closeReportButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             closeReportButton.ForeColor = Color.GhostWhite;
             closeReportButton.ImageAlign = ContentAlignment.MiddleRight;
-            closeReportButton.Location = new Point(1224, 2);
+            closeReportButton.Location = new Point(1220, 2);
             closeReportButton.Margin = new Padding(3, 2, 3, 2);
             closeReportButton.Name = "closeReportButton";
             closeReportButton.Size = new Size(34, 32);
@@ -129,16 +129,18 @@
             monthlySales.BackgroundImageLayout = ImageLayout.None;
             monthlySales.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             monthlySales.BorderlineColor = Color.Transparent;
-            chartArea3.Name = "ChartArea1";
-            monthlySales.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            monthlySales.Legends.Add(legend3);
+            chartArea1.BorderColor = Color.Indigo;
+            chartArea1.IsSameFontSizeForAllAxes = true;
+            chartArea1.Name = "ChartArea1";
+            monthlySales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            monthlySales.Legends.Add(legend1);
             monthlySales.Location = new Point(460, 228);
             monthlySales.Name = "monthlySales";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            monthlySales.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            monthlySales.Series.Add(series1);
             monthlySales.Size = new Size(742, 212);
             monthlySales.TabIndex = 34;
             monthlySales.Text = "Total Sales";
@@ -254,19 +256,20 @@
             weeklySalesChart.BackgroundImageLayout = ImageLayout.None;
             weeklySalesChart.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             weeklySalesChart.BorderlineColor = Color.Transparent;
-            chartArea4.Name = "ChartArea1";
-            weeklySalesChart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            weeklySalesChart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            weeklySalesChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            weeklySalesChart.Legends.Add(legend2);
             weeklySalesChart.Location = new Point(460, 529);
             weeklySalesChart.Name = "weeklySalesChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            weeklySalesChart.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            weeklySalesChart.Series.Add(series2);
             weeklySalesChart.Size = new Size(742, 212);
             weeklySalesChart.TabIndex = 39;
             weeklySalesChart.Text = "Total Sales";
+            weeklySalesChart.Click += weeklySalesChart_Click;
             // 
             // customizedPanel4
             // 

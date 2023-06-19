@@ -158,7 +158,7 @@ namespace InventorySytem_GUI
 
         private void signUpLabel_Click(object sender, EventArgs e)
         {
-
+            WindowNavigator.ShowCreateAccount();
         }
 
         private void customizedPanel3_Paint(object sender, PaintEventArgs e)

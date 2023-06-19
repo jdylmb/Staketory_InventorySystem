@@ -30,28 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateUser));
             logInPanel = new Panel();
+            pictureBox1 = new PictureBox();
+            logo_img = new PictureBox();
+            label2 = new Label();
             signUpLabel = new Label();
             accountLabel = new Label();
             label1 = new Label();
             customizedPanel2 = new CustomizedPanel();
-            LOGIN = new Button();
+            SignUpButton = new Button();
             passwordLabel = new Label();
             usernameLabel = new Label();
             password = new TextBox();
             user_img = new PictureBox();
             username = new TextBox();
             pictureBox3 = new PictureBox();
-            logo_img = new PictureBox();
             customizedPanel1 = new CustomizedPanel();
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
             logInPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)logo_img).BeginInit();
             customizedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_img).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)logo_img).BeginInit();
             customizedPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // logInPanel
@@ -68,6 +68,45 @@
             logInPanel.TabIndex = 2;
             logInPanel.Paint += logInPanel_Paint;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Enabled = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(22, 432);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(383, 39);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 44;
+            pictureBox1.TabStop = false;
+            // 
+            // logo_img
+            // 
+            logo_img.BackgroundImageLayout = ImageLayout.Stretch;
+            logo_img.Enabled = false;
+            logo_img.Image = (Image)resources.GetObject("logo_img.Image");
+            logo_img.Location = new Point(47, 117);
+            logo_img.Margin = new Padding(3, 2, 3, 2);
+            logo_img.Name = "logo_img";
+            logo_img.Size = new Size(333, 342);
+            logo_img.SizeMode = PictureBoxSizeMode.Zoom;
+            logo_img.TabIndex = 3;
+            logo_img.TabStop = false;
+            logo_img.Click += logo_img_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkSlateBlue;
+            label2.Location = new Point(3, 562);
+            label2.Name = "label2";
+            label2.Size = new Size(410, 21);
+            label2.TabIndex = 0;
+            label2.Text = "Enter your personal details and start your journey with us.";
+            // 
             // signUpLabel
             // 
             signUpLabel.AutoSize = true;
@@ -79,6 +118,7 @@
             signUpLabel.Size = new Size(59, 21);
             signUpLabel.TabIndex = 45;
             signUpLabel.Text = "Log In";
+            signUpLabel.Click += signUpLabel_Click;
             // 
             // accountLabel
             // 
@@ -108,7 +148,7 @@
             // 
             customizedPanel2.BackColor = Color.White;
             customizedPanel2.BorderRadius = 30;
-            customizedPanel2.Controls.Add(LOGIN);
+            customizedPanel2.Controls.Add(SignUpButton);
             customizedPanel2.ForeColor = Color.Black;
             customizedPanel2.GradientAngle = 90F;
             customizedPanel2.GradientBottomColor = Color.MediumPurple;
@@ -118,21 +158,21 @@
             customizedPanel2.Size = new Size(313, 40);
             customizedPanel2.TabIndex = 41;
             // 
-            // LOGIN
+            // SignUpButton
             // 
-            LOGIN.AccessibleName = "loginBtn";
-            LOGIN.BackColor = Color.SeaGreen;
-            LOGIN.FlatStyle = FlatStyle.Popup;
-            LOGIN.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            LOGIN.ForeColor = Color.GhostWhite;
-            LOGIN.Location = new Point(-12, -11);
-            LOGIN.Margin = new Padding(3, 2, 3, 2);
-            LOGIN.Name = "LOGIN";
-            LOGIN.Size = new Size(336, 65);
-            LOGIN.TabIndex = 3;
-            LOGIN.Text = "Sign Up";
-            LOGIN.UseVisualStyleBackColor = false;
-            LOGIN.Click += LOGIN_Click;
+            SignUpButton.AccessibleName = "loginBtn";
+            SignUpButton.BackColor = Color.SeaGreen;
+            SignUpButton.FlatStyle = FlatStyle.Popup;
+            SignUpButton.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SignUpButton.ForeColor = Color.GhostWhite;
+            SignUpButton.Location = new Point(-12, -11);
+            SignUpButton.Margin = new Padding(3, 2, 3, 2);
+            SignUpButton.Name = "SignUpButton";
+            SignUpButton.Size = new Size(336, 65);
+            SignUpButton.TabIndex = 3;
+            SignUpButton.Text = "Sign Up";
+            SignUpButton.UseVisualStyleBackColor = false;
+            SignUpButton.Click += SignUpButton_Click;
             // 
             // passwordLabel
             // 
@@ -165,6 +205,7 @@
             password.Name = "password";
             password.Size = new Size(314, 29);
             password.TabIndex = 38;
+            password.UseSystemPasswordChar = true;
             // 
             // user_img
             // 
@@ -200,20 +241,6 @@
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
             // 
-            // logo_img
-            // 
-            logo_img.BackgroundImageLayout = ImageLayout.Stretch;
-            logo_img.Enabled = false;
-            logo_img.Image = (Image)resources.GetObject("logo_img.Image");
-            logo_img.Location = new Point(47, 117);
-            logo_img.Margin = new Padding(3, 2, 3, 2);
-            logo_img.Name = "logo_img";
-            logo_img.Size = new Size(333, 342);
-            logo_img.SizeMode = PictureBoxSizeMode.Zoom;
-            logo_img.TabIndex = 3;
-            logo_img.TabStop = false;
-            logo_img.Click += logo_img_Click;
-            // 
             // customizedPanel1
             // 
             customizedPanel1.BackColor = Color.White;
@@ -228,31 +255,6 @@
             customizedPanel1.Name = "customizedPanel1";
             customizedPanel1.Size = new Size(420, 659);
             customizedPanel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.DarkSlateBlue;
-            label2.Location = new Point(3, 562);
-            label2.Name = "label2";
-            label2.Size = new Size(410, 21);
-            label2.TabIndex = 0;
-            label2.Text = "Enter your personal details and start your journey with us.";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Enabled = false;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(22, 432);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(383, 39);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 44;
-            pictureBox1.TabStop = false;
             // 
             // CreateUser
             // 
@@ -279,12 +281,12 @@
             Load += CreateUser_Load;
             logInPanel.ResumeLayout(false);
             logInPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)logo_img).EndInit();
             customizedPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)user_img).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)logo_img).EndInit();
             customizedPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -310,5 +312,6 @@
         private Label signUpLabel;
         private Label label2;
         private PictureBox pictureBox1;
+        private Button SignUpButton;
     }
 }

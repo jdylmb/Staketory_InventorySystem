@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StakeTory_InventorySystem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,14 +41,31 @@ namespace InventorySytem_GUI
 
         }
 
-        private void LOGIN_Click(object sender, EventArgs e)
+        private void SignUpButton_Click(object sender, EventArgs e)
         {
+            UserManagement userManagement = new UserManagement("user.json");
+
+            bool isSuccess = userManagement.CreateAccount(username.Text, password.Text);
+
+            if (isSuccess)
+            {
+                MessageBox.Show("Account Created Succesfully!", "Create Account");
+            }
+            else
+            {
+                MessageBox.Show("Account Creation Failed!", "Create Account Failed", MessageBoxButtons.RetryCancel, MessageBoxIcon.Question);
+            }
 
         }
 
         private void logo_img_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void signUpLabel_Click(object sender, EventArgs e)
+        {
+            WindowNavigator.ShowLoginForm();
         }
     }
 }

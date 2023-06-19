@@ -6,6 +6,7 @@ namespace InventorySytem_GUI
 {
     internal static class Program
     {
+        //private static WindowNavigator windowNavigator;
         private static Start splashScreen;
 
         /// <summary>
@@ -17,23 +18,26 @@ namespace InventorySytem_GUI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            //Application.Run(new Form2());
 
-            //// Initialize the window navigator and show the login form
+            // Initialize the window navigator and show the login form
+           // windowNavigator = new WindowNavigator();
             WindowNavigator.ShowLoginForm();
 
-            //// show the splash screen
-            //thread splashthread = new thread(showsplashscreen);
-            //splashthread.start();
 
-            //// simulate some initialization work
-            //simulateinitializationwork();
+            // show the splash screen
+            Thread splashthread = new Thread(ShowSplashScreen);
+            splashthread.Start();
+
+            // simulate some initialization work
+            SimulateInitializationWork();
 
 
-            //// close the splash screen when the initialization is complete
-            //if (splashscreen != null && !splashscreen.isdisposed)
-            //{
-            //    splashscreen.invoke(new action(() => splashscreen.close()));
-            //}
+            // close the splash screen when the initialization is complete
+            if (splashScreen != null && !splashScreen.IsDisposed)
+            {
+               splashScreen.Invoke(new Action(() => splashScreen.Close()));
+            }
 
             // Run the application
             Application.Run();
@@ -59,6 +63,7 @@ namespace InventorySytem_GUI
     {
         private static Menu menuForm;
         private static LogInForm loginForm;
+        private static CreateUser createUserForm;
         // Add more form instances as needed
 
         public static void ShowMenu()
@@ -74,6 +79,11 @@ namespace InventorySytem_GUI
             {
                 loginForm.Close();
             }
+
+            if (createUserForm != null && !createUserForm.IsDisposed)
+            {
+                createUserForm.Close();
+            }
         }
 
         public static void ShowLoginForm()
@@ -88,6 +98,31 @@ namespace InventorySytem_GUI
             if (menuForm != null && !menuForm.IsDisposed)
             {
                 menuForm.Close();
+            }
+
+            if (createUserForm != null && !createUserForm.IsDisposed)
+            {
+                createUserForm.Close();
+            }
+        }
+
+        public static void ShowCreateAccount()
+        {
+            if (createUserForm == null || createUserForm.IsDisposed)
+            {
+                createUserForm = new CreateUser();
+            }
+
+            createUserForm.Show();
+
+            if (menuForm != null && !menuForm.IsDisposed)
+            {
+                menuForm.Close();
+            }
+
+            if (loginForm != null && !loginForm.IsDisposed)
+            {
+                loginForm.Close();
             }
         }
 
