@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductPage));
             productQuantity = new TextBox();
             productName = new TextBox();
@@ -40,6 +42,13 @@
             deleteBtn = new Button();
             addBtn = new Button();
             dataGridView_ProductPage = new DataGridView();
+            prod_Id = new DataGridViewTextBoxColumn();
+            Prod_name = new DataGridViewTextBoxColumn();
+            qnty = new DataGridViewTextBoxColumn();
+            prod_price = new DataGridViewTextBoxColumn();
+            prod_description = new DataGridViewTextBoxColumn();
+            prod_cat = new DataGridViewTextBoxColumn();
+            date = new DataGridViewTextBoxColumn();
             customizedPanel1 = new CustomizedPanel();
             prodIdLabel = new Label();
             productNameLabel = new Label();
@@ -55,13 +64,6 @@
             MngProductPanel = new CustomizedPanel();
             closeProductButton = new Button();
             productLowerDockPanel = new CustomizedPanel();
-            date = new DataGridViewTextBoxColumn();
-            prod_cat = new DataGridViewTextBoxColumn();
-            prod_description = new DataGridViewTextBoxColumn();
-            prod_price = new DataGridViewTextBoxColumn();
-            qnty = new DataGridViewTextBoxColumn();
-            Prod_name = new DataGridViewTextBoxColumn();
-            prod_Id = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView_ProductPage).BeginInit();
             customizedPanel1.SuspendLayout();
             customizedPanel2.SuspendLayout();
@@ -174,28 +176,105 @@
             dataGridView_ProductPage.AllowUserToAddRows = false;
             dataGridView_ProductPage.AllowUserToDeleteRows = false;
             dataGridView_ProductPage.AllowUserToResizeColumns = false;
-            dataGridView_ProductPage.BackgroundColor = SystemColors.Control;
+            dataGridView_ProductPage.AllowUserToResizeRows = false;
+            dataGridView_ProductPage.BackgroundColor = Color.White;
             dataGridView_ProductPage.BorderStyle = BorderStyle.None;
-            dataGridView_ProductPage.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.Indigo;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Indigo;
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView_ProductPage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView_ProductPage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_ProductPage.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView_ProductPage.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.Lavender;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.Indigo;
+            dataGridViewCellStyle7.SelectionBackColor = Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = Color.Indigo;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dataGridView_ProductPage.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView_ProductPage.ColumnHeadersHeight = 54;
+            dataGridView_ProductPage.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView_ProductPage.Columns.AddRange(new DataGridViewColumn[] { prod_Id, Prod_name, qnty, prod_price, prod_description, prod_cat, date });
             dataGridView_ProductPage.EnableHeadersVisualStyles = false;
-            dataGridView_ProductPage.GridColor = Color.MediumPurple;
+            dataGridView_ProductPage.GridColor = Color.White;
             dataGridView_ProductPage.Location = new Point(0, 0);
+            dataGridView_ProductPage.MultiSelect = false;
             dataGridView_ProductPage.Name = "dataGridView_ProductPage";
-            dataGridView_ProductPage.RowTemplate.Height = 25;
+            dataGridView_ProductPage.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.White;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Indigo;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Indigo;
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridView_ProductPage.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridView_ProductPage.RowHeadersVisible = false;
+            dataGridView_ProductPage.RowHeadersWidth = 40;
+            dataGridView_ProductPage.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.Lavender;
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.Indigo;
+            dataGridViewCellStyle9.SelectionBackColor = Color.Indigo;
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            dataGridView_ProductPage.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridView_ProductPage.RowTemplate.DividerHeight = 3;
+            dataGridView_ProductPage.RowTemplate.Height = 40;
+            dataGridView_ProductPage.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView_ProductPage.Size = new Size(746, 540);
             dataGridView_ProductPage.TabIndex = 40;
             dataGridView_ProductPage.CellClick += dataGridView_ProductPage_CellContentClick;
             dataGridView_ProductPage.CellContentClick += dataGridView_ProductPage_CellContentClick;
+            // 
+            // prod_Id
+            // 
+            prod_Id.DividerWidth = 1;
+            prod_Id.FillWeight = 60F;
+            prod_Id.HeaderText = "Product ID";
+            prod_Id.Name = "prod_Id";
+            prod_Id.Width = 70;
+            // 
+            // Prod_name
+            // 
+            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Prod_name.FillWeight = 80F;
+            Prod_name.HeaderText = "Product Name";
+            Prod_name.MinimumWidth = 110;
+            Prod_name.Name = "Prod_name";
+            // 
+            // qnty
+            // 
+            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            qnty.FillWeight = 50F;
+            qnty.HeaderText = "Quantity";
+            qnty.Name = "qnty";
+            // 
+            // prod_price
+            // 
+            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_price.FillWeight = 50F;
+            prod_price.HeaderText = "Price";
+            prod_price.Name = "prod_price";
+            // 
+            // prod_description
+            // 
+            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_description.FillWeight = 70F;
+            prod_description.HeaderText = "Description";
+            prod_description.Name = "prod_description";
+            // 
+            // prod_cat
+            // 
+            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_cat.FillWeight = 60F;
+            prod_cat.HeaderText = "Category";
+            prod_cat.Name = "prod_cat";
+            // 
+            // date
+            // 
+            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            date.FillWeight = 40F;
+            date.HeaderText = "Date";
+            date.Name = "date";
             // 
             // customizedPanel1
             // 
@@ -315,7 +394,7 @@
             TitleLabel.AutoSize = true;
             TitleLabel.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             TitleLabel.ForeColor = Color.Indigo;
-            TitleLabel.Location = new Point(375, 24);
+            TitleLabel.Location = new Point(381, 22);
             TitleLabel.Name = "TitleLabel";
             TitleLabel.Size = new Size(520, 36);
             TitleLabel.TabIndex = 0;
@@ -326,12 +405,12 @@
             mng_productLabel.AutoSize = true;
             mng_productLabel.BackColor = Color.Transparent;
             mng_productLabel.Font = new Font("Footlight MT Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            mng_productLabel.ForeColor = Color.Indigo;
-            mng_productLabel.Location = new Point(541, 69);
+            mng_productLabel.ForeColor = Color.White;
+            mng_productLabel.Location = new Point(609, 84);
             mng_productLabel.Name = "mng_productLabel";
-            mng_productLabel.Size = new Size(197, 29);
+            mng_productLabel.Size = new Size(99, 29);
             mng_productLabel.TabIndex = 2;
-            mng_productLabel.Text = "Manage Product";
+            mng_productLabel.Text = "Product";
             // 
             // MngProductPanel
             // 
@@ -358,11 +437,12 @@
             closeProductButton.BackColor = Color.Transparent;
             closeProductButton.BackgroundImage = (Image)resources.GetObject("closeProductButton.BackgroundImage");
             closeProductButton.BackgroundImageLayout = ImageLayout.Stretch;
+            closeProductButton.FlatAppearance.BorderSize = 0;
             closeProductButton.FlatStyle = FlatStyle.Flat;
             closeProductButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             closeProductButton.ForeColor = Color.Transparent;
             closeProductButton.ImageAlign = ContentAlignment.MiddleRight;
-            closeProductButton.Location = new Point(1242, 2);
+            closeProductButton.Location = new Point(1226, 2);
             closeProductButton.Margin = new Padding(3, 2, 3, 2);
             closeProductButton.Name = "closeProductButton";
             closeProductButton.Size = new Size(34, 32);
@@ -382,57 +462,6 @@
             productLowerDockPanel.Name = "productLowerDockPanel";
             productLowerDockPanel.Size = new Size(1279, 63);
             productLowerDockPanel.TabIndex = 33;
-            // 
-            // date
-            // 
-            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            date.HeaderText = "Date";
-            date.Name = "date";
-            // 
-            // prod_cat
-            // 
-            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            prod_cat.FillWeight = 50F;
-            prod_cat.HeaderText = "Category";
-            prod_cat.Name = "prod_cat";
-            // 
-            // prod_description
-            // 
-            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            prod_description.FillWeight = 50F;
-            prod_description.HeaderText = "Description";
-            prod_description.Name = "prod_description";
-            prod_description.Width = 92;
-            // 
-            // prod_price
-            // 
-            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            prod_price.FillWeight = 50F;
-            prod_price.HeaderText = "Price";
-            prod_price.Name = "prod_price";
-            prod_price.Width = 58;
-            // 
-            // qnty
-            // 
-            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            qnty.FillWeight = 50F;
-            qnty.HeaderText = "Quantity";
-            qnty.Name = "qnty";
-            // 
-            // Prod_name
-            // 
-            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Prod_name.FillWeight = 50F;
-            Prod_name.HeaderText = "Product Name";
-            Prod_name.Name = "Prod_name";
-            // 
-            // prod_Id
-            // 
-            prod_Id.DividerWidth = 1;
-            prod_Id.FillWeight = 60F;
-            prod_Id.HeaderText = "Product ID";
-            prod_Id.Name = "prod_Id";
-            prod_Id.Width = 107;
             // 
             // ProductPage
             // 

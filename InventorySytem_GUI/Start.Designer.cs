@@ -68,6 +68,7 @@
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Start";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Start";
             Load += Start_Load;
             customizedPanel1.ResumeLayout(false);

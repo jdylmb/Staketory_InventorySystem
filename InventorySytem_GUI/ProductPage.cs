@@ -13,7 +13,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace InventorySytem_GUI
 {
-    public partial class ProductPage : 
+    public partial class ProductPage :
         UserControl
     {
         private ProductManagement productManagement;
@@ -183,6 +183,11 @@ namespace InventorySytem_GUI
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
 
         }

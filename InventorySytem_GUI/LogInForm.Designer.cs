@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogInForm));
             panel1 = new Panel();
-            panel2 = new Panel();
+            logInPanel = new Panel();
+            pictureBox1 = new PictureBox();
+            forgotPassword = new Label();
             customizedPanel2 = new CustomizedPanel();
             LOGIN = new Button();
             passwordLabel = new Label();
@@ -45,12 +47,19 @@
             label2 = new Label();
             customizedPanel1 = new CustomizedPanel();
             closeLogInButton = new Button();
-            panel2.SuspendLayout();
+            createUserPanel = new Panel();
+            signUpLabel = new Label();
+            accountLabel = new Label();
+            customizedPanel3 = new CustomizedPanel();
+            logInPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             customizedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_img).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)logo_img).BeginInit();
             customizedPanel1.SuspendLayout();
+            createUserPanel.SuspendLayout();
+            customizedPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -61,27 +70,53 @@
             panel1.Size = new Size(212, 249);
             panel1.TabIndex = 0;
             // 
-            // panel2
+            // logInPanel
             // 
-            panel2.BackColor = Color.White;
-            panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(customizedPanel2);
-            panel2.Controls.Add(passwordLabel);
-            panel2.Controls.Add(usernameLabel);
-            panel2.Controls.Add(password);
-            panel2.Controls.Add(user_img);
-            panel2.Controls.Add(username);
-            panel2.Controls.Add(pictureBox3);
-            panel2.Controls.Add(clear);
-            panel2.Controls.Add(logo_img);
-            panel2.Controls.Add(showPassword);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(416, 557);
-            panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
+            logInPanel.BackColor = Color.White;
+            logInPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            logInPanel.Controls.Add(pictureBox1);
+            logInPanel.Controls.Add(forgotPassword);
+            logInPanel.Controls.Add(customizedPanel2);
+            logInPanel.Controls.Add(passwordLabel);
+            logInPanel.Controls.Add(usernameLabel);
+            logInPanel.Controls.Add(password);
+            logInPanel.Controls.Add(user_img);
+            logInPanel.Controls.Add(username);
+            logInPanel.Controls.Add(pictureBox3);
+            logInPanel.Controls.Add(clear);
+            logInPanel.Controls.Add(logo_img);
+            logInPanel.Controls.Add(showPassword);
+            logInPanel.Location = new Point(-9, -5);
+            logInPanel.Margin = new Padding(3, 2, 3, 2);
+            logInPanel.Name = "logInPanel";
+            logInPanel.Size = new Size(428, 563);
+            logInPanel.TabIndex = 1;
+            logInPanel.Paint += logInPanel_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Enabled = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(24, 223);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(383, 39);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 43;
+            pictureBox1.TabStop = false;
+            // 
+            // forgotPassword
+            // 
+            forgotPassword.AccessibleDescription = "clearAll";
+            forgotPassword.AutoSize = true;
+            forgotPassword.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            forgotPassword.ForeColor = Color.DarkSlateBlue;
+            forgotPassword.Location = new Point(154, 525);
+            forgotPassword.Name = "forgotPassword";
+            forgotPassword.Size = new Size(100, 15);
+            forgotPassword.TabIndex = 42;
+            forgotPassword.Text = "Forgot Password?";
             // 
             // customizedPanel2
             // 
@@ -102,14 +137,14 @@
             LOGIN.AccessibleName = "loginBtn";
             LOGIN.BackColor = Color.SeaGreen;
             LOGIN.FlatStyle = FlatStyle.Popup;
-            LOGIN.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LOGIN.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
             LOGIN.ForeColor = Color.GhostWhite;
             LOGIN.Location = new Point(-11, -9);
             LOGIN.Margin = new Padding(3, 2, 3, 2);
             LOGIN.Name = "LOGIN";
             LOGIN.Size = new Size(173, 59);
             LOGIN.TabIndex = 3;
-            LOGIN.Text = "LOGIN";
+            LOGIN.Text = "Log In";
             LOGIN.UseVisualStyleBackColor = false;
             LOGIN.Click += loginBtn_Click;
             // 
@@ -199,7 +234,7 @@
             logo_img.BackgroundImageLayout = ImageLayout.Stretch;
             logo_img.Enabled = false;
             logo_img.Image = (Image)resources.GetObject("logo_img.Image");
-            logo_img.Location = new Point(91, 61);
+            logo_img.Location = new Point(89, 33);
             logo_img.Margin = new Padding(3, 2, 3, 2);
             logo_img.Name = "logo_img";
             logo_img.Size = new Size(235, 186);
@@ -239,33 +274,86 @@
             // 
             customizedPanel1.BackColor = Color.White;
             customizedPanel1.BorderRadius = 30;
-            customizedPanel1.Controls.Add(panel2);
+            customizedPanel1.Controls.Add(logInPanel);
             customizedPanel1.ForeColor = Color.Black;
             customizedPanel1.GradientAngle = 90F;
             customizedPanel1.GradientBottomColor = Color.MediumPurple;
             customizedPanel1.GradientTopColor = Color.Violet;
-            customizedPanel1.Location = new Point(221, 41);
+            customizedPanel1.Location = new Point(220, 28);
             customizedPanel1.Name = "customizedPanel1";
             customizedPanel1.Size = new Size(416, 557);
             customizedPanel1.TabIndex = 3;
             // 
             // closeLogInButton
             // 
-            closeLogInButton.AccessibleName = "logInCloseBtn";
+            closeLogInButton.AccessibleName = "searchBtn";
             closeLogInButton.BackColor = Color.Transparent;
             closeLogInButton.BackgroundImage = (Image)resources.GetObject("closeLogInButton.BackgroundImage");
             closeLogInButton.BackgroundImageLayout = ImageLayout.Stretch;
-            closeLogInButton.FlatStyle = FlatStyle.Popup;
+            closeLogInButton.FlatAppearance.BorderSize = 0;
+            closeLogInButton.FlatStyle = FlatStyle.Flat;
             closeLogInButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            closeLogInButton.ForeColor = Color.GhostWhite;
+            closeLogInButton.ForeColor = Color.Transparent;
             closeLogInButton.ImageAlign = ContentAlignment.MiddleRight;
-            closeLogInButton.Location = new Point(803, 2);
-            closeLogInButton.Margin = new Padding(3, 2, 3, 2);
+            closeLogInButton.Location = new Point(796, 0);
+            closeLogInButton.Margin = new Padding(0);
             closeLogInButton.Name = "closeLogInButton";
-            closeLogInButton.Size = new Size(26, 24);
+            closeLogInButton.Size = new Size(34, 32);
             closeLogInButton.TabIndex = 45;
             closeLogInButton.UseVisualStyleBackColor = false;
-            closeLogInButton.Click += closeLogInButton_Click;
+            closeLogInButton.Click += closeLogInButton_Click_1;
+            // 
+            // createUserPanel
+            // 
+            createUserPanel.BackColor = Color.White;
+            createUserPanel.Controls.Add(signUpLabel);
+            createUserPanel.Controls.Add(accountLabel);
+            createUserPanel.Location = new Point(-9, -3);
+            createUserPanel.Name = "createUserPanel";
+            createUserPanel.Size = new Size(434, 71);
+            createUserPanel.TabIndex = 46;
+            createUserPanel.Paint += createUserPanel_Paint;
+            // 
+            // signUpLabel
+            // 
+            signUpLabel.AutoSize = true;
+            signUpLabel.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            signUpLabel.ForeColor = Color.Indigo;
+            signUpLabel.Location = new Point(255, 17);
+            signUpLabel.Name = "signUpLabel";
+            signUpLabel.Size = new Size(61, 20);
+            signUpLabel.TabIndex = 41;
+            signUpLabel.Text = "Sign up";
+            signUpLabel.CursorChanged += signUpLabel_Click;
+            signUpLabel.Click += signUpLabel_Click;
+            signUpLabel.Enter += signUpLabel_Click;
+            signUpLabel.MouseClick += Yes;
+            // 
+            // accountLabel
+            // 
+            accountLabel.AutoSize = true;
+            accountLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            accountLabel.ForeColor = Color.DarkSlateBlue;
+            accountLabel.Location = new Point(91, 17);
+            accountLabel.Name = "accountLabel";
+            accountLabel.Size = new Size(169, 20);
+            accountLabel.TabIndex = 40;
+            accountLabel.Text = " Don't have an Account?";
+            // 
+            // customizedPanel3
+            // 
+            customizedPanel3.BackColor = Color.White;
+            customizedPanel3.BorderRadius = 30;
+            customizedPanel3.Controls.Add(createUserPanel);
+            customizedPanel3.ForeColor = Color.Black;
+            customizedPanel3.GradientAngle = 90F;
+            customizedPanel3.GradientBottomColor = Color.MediumPurple;
+            customizedPanel3.GradientTopColor = Color.Violet;
+            customizedPanel3.Location = new Point(220, 591);
+            customizedPanel3.Name = "customizedPanel3";
+            customizedPanel3.Size = new Size(416, 53);
+            customizedPanel3.TabIndex = 47;
+            customizedPanel3.Paint += customizedPanel3_Paint;
             // 
             // LogInForm
             // 
@@ -274,7 +362,8 @@
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(832, 639);
+            ClientSize = new Size(837, 659);
+            Controls.Add(customizedPanel3);
             Controls.Add(closeLogInButton);
             Controls.Add(customizedPanel1);
             Controls.Add(label2);
@@ -286,13 +375,17 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            logInPanel.ResumeLayout(false);
+            logInPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             customizedPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)user_img).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)logo_img).EndInit();
             customizedPanel1.ResumeLayout(false);
+            createUserPanel.ResumeLayout(false);
+            createUserPanel.PerformLayout();
+            customizedPanel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -300,7 +393,7 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
+        private Panel logInPanel;
         private Label label1;
         private Label label2;
         private Button LOGIN;
@@ -316,5 +409,11 @@
         private TextBox username;
         private CustomizedPanel customizedPanel2;
         private Button closeLogInButton;
+        private Label forgotPassword;
+        private Panel createUserPanel;
+        private Label signUpLabel;
+        private Label accountLabel;
+        private CustomizedPanel customizedPanel3;
+        private PictureBox pictureBox1;
     }
 }

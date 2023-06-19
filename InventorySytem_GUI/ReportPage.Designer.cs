@@ -66,11 +66,11 @@
             mng_reportLabel.AutoSize = true;
             mng_reportLabel.Font = new Font("Footlight MT Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             mng_reportLabel.ForeColor = SystemColors.ButtonHighlight;
-            mng_reportLabel.Location = new Point(497, 72);
+            mng_reportLabel.Location = new Point(590, 72);
             mng_reportLabel.Name = "mng_reportLabel";
-            mng_reportLabel.Size = new Size(184, 29);
+            mng_reportLabel.Size = new Size(135, 29);
             mng_reportLabel.TabIndex = 2;
-            mng_reportLabel.Text = "Manage Report";
+            mng_reportLabel.Text = "Dashboard";
             // 
             // MngProductPanel
             // 
@@ -88,6 +88,8 @@
             MngProductPanel.Name = "MngProductPanel";
             MngProductPanel.Size = new Size(1279, 110);
             MngProductPanel.TabIndex = 33;
+            MngProductPanel.VisibleChanged += MngProductPanel_VisibleChanged;
+            MngProductPanel.Paint += MngProductPanel_Paint;
             // 
             // closeReportButton
             // 
@@ -95,11 +97,12 @@
             closeReportButton.BackColor = Color.Transparent;
             closeReportButton.BackgroundImage = (Image)resources.GetObject("closeReportButton.BackgroundImage");
             closeReportButton.BackgroundImageLayout = ImageLayout.Stretch;
-            closeReportButton.FlatStyle = FlatStyle.Popup;
+            closeReportButton.FlatAppearance.BorderSize = 0;
+            closeReportButton.FlatStyle = FlatStyle.Flat;
             closeReportButton.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
             closeReportButton.ForeColor = Color.GhostWhite;
             closeReportButton.ImageAlign = ContentAlignment.MiddleRight;
-            closeReportButton.Location = new Point(1242, 0);
+            closeReportButton.Location = new Point(1224, 2);
             closeReportButton.Margin = new Padding(3, 2, 3, 2);
             closeReportButton.Name = "closeReportButton";
             closeReportButton.Size = new Size(34, 32);
@@ -112,11 +115,12 @@
             TitleLabel.AutoSize = true;
             TitleLabel.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
             TitleLabel.ForeColor = Color.Indigo;
-            TitleLabel.Location = new Point(332, 23);
+            TitleLabel.Location = new Point(383, 23);
             TitleLabel.Name = "TitleLabel";
             TitleLabel.Size = new Size(520, 36);
             TitleLabel.TabIndex = 0;
             TitleLabel.Text = "Staketory Management System";
+            TitleLabel.Click += TitleLabel_Click;
             // 
             // monthlySales
             // 
@@ -284,10 +288,10 @@
             // 
             totalSales.AutoSize = true;
             totalSales.BackColor = Color.Transparent;
-            totalSales.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point);
-            totalSales.Location = new Point(0, 35);
+            totalSales.Font = new Font("Segoe UI", 69.75F, FontStyle.Bold, GraphicsUnit.Point);
+            totalSales.Location = new Point(0, 38);
             totalSales.Name = "totalSales";
-            totalSales.Size = new Size(139, 128);
+            totalSales.Size = new Size(135, 124);
             totalSales.TabIndex = 37;
             totalSales.Text = "P ";
             totalSales.Click += totalSales_Click;
@@ -320,6 +324,7 @@
             Name = "ReportPage";
             Size = new Size(1279, 810);
             Load += ReportPage_Load_1;
+            VisibleChanged += ReportPage_VisibleChanged;
             MngProductPanel.ResumeLayout(false);
             MngProductPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)monthlySales).EndInit();

@@ -82,9 +82,9 @@ namespace InventorySytem_GUI
             password.Text = "";
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void logInPanel_Paint(object sender, PaintEventArgs e)
         {
-            ControlPaint.DrawBorder(e.Graphics, panel2.ClientRectangle,
+            ControlPaint.DrawBorder(e.Graphics, logInPanel.ClientRectangle,
                 SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid,
                 SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid,
                 SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid,
@@ -109,7 +109,8 @@ namespace InventorySytem_GUI
             }
             else
             {
-                MessageBox.Show($"Log In Failed!", "Log In");
+                MessageBox.Show($"Invalid username or password! Try Again?", "Log In Failed", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                clear_Click(sender, e);
             }
         }
 
@@ -135,15 +136,39 @@ namespace InventorySytem_GUI
 
         }
 
-        private void closeLogInButton_Click(object sender, EventArgs e)
+        private void closeLogInButton_Click_1(object sender, EventArgs e)
         {
             // verify the user wants to exit
             DialogResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit Application", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.OK)
             {
                 Application.Exit();
-                closeLogInButton.Enabled = true;
+                //closeLogInButton.Enabled = true;
             }
+        }
+
+        private void createUserPanel_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, createUserPanel.ClientRectangle,
+                SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid,
+                SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid,
+                SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid,
+                SystemColors.ControlLightLight, 10, ButtonBorderStyle.Solid);
+        }
+
+        private void signUpLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customizedPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Yes(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

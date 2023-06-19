@@ -12,7 +12,7 @@ namespace InventorySytem_GUI
             salesManagement = new SalesManagement("sales.json");
             InitializeComponent();
             // Generate the chart data and populate the chart
-            GenerateChart();
+            //GenerateChart();
         }
 
         private void GenerateChart()
@@ -20,13 +20,16 @@ namespace InventorySytem_GUI
             // Add sample data points to the chart
             SalesData[] salesDataArray = this.salesManagement.CalculateTotalSalesPerMonth();
 
-            monthlySales.Series.Add("Sales");
-            monthlySales.Series["Sales"].ChartType = SeriesChartType.Line;
+            monthlySales.Series.Clear();
+            weeklySalesChart.Series.Clear();
+
+            monthlySales.Series.Add("Monthly Sales");
+            monthlySales.Series["Monthly Sales"].ChartType = SeriesChartType.Line;
             foreach (SalesData data in salesDataArray)
             {
                 string month = data.Month;
                 double totalSales = data.TotalSales;
-                monthlySales.Series["Sales"].Points.AddXY(month, totalSales);
+                monthlySales.Series["Monthly Sales"].Points.AddXY(month, totalSales);
                 Console.WriteLine($"Month: {month}, Total Sales: {totalSales}");
             }
 
@@ -36,16 +39,16 @@ namespace InventorySytem_GUI
 
             salesDataArray = this.salesManagement.GenerateWeeklySalesReport();
 
-            weeklySalesChart.Series.Add("Sales");
-            weeklySalesChart.Series["Sales"].ChartType = SeriesChartType.Line;
+            weeklySalesChart.Series.Add("Weekly Sales");
+            weeklySalesChart.Series["Weekly Sales"].ChartType = SeriesChartType.Line;
             foreach (SalesData data in salesDataArray)
             {
                 string month = data.Month;
                 double totalSales = data.TotalSales;
-                weeklySalesChart.Series["Sales"].Points.AddXY(month, totalSales);
+                weeklySalesChart.Series["Weekly Sales"].Points.AddXY(month, totalSales);
                 Console.WriteLine($"Month: {month}, Total Sales: {totalSales}");
             }
-            
+
 
             // Set chart title and axis labels
             weeklySalesChart.ChartAreas[0].AxisX.Title = "Week";
@@ -55,12 +58,12 @@ namespace InventorySytem_GUI
             string currentMonthYear = currentDateTime.ToString("yyyy-MM");
 
             Product topProduct = this.salesManagement.GetHighestSellingProductOfMonth(currentMonthYear);
-            label1.Text += " " + topProduct.Name;
-            topSalesAmount.Text += topProduct.Price.ToString("0.00");
+            label1.Text = "Top Product: " + topProduct.Name;
+            topSalesAmount.Text = "P " + topProduct.Price.ToString("0.00");
 
             double calculatedTotalSales = this.salesManagement.CalculateTotalSales();
 
-            totalSales.Text += calculatedTotalSales.ToString("0.00");
+            totalSales.Text = "P " + calculatedTotalSales.ToString("0.00");
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -116,7 +119,7 @@ namespace InventorySytem_GUI
 
         private void ReportPage_Load_1(object sender, EventArgs e)
         {
-
+            //GenerateChart();
         }
 
         private void customizedPanel4_Paint(object sender, PaintEventArgs e)
@@ -132,6 +135,32 @@ namespace InventorySytem_GUI
         private void totalSales_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MngProductPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TitleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MngProductPanel_VisibleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReportPage_VisibleChanged(object sender, EventArgs e)
+        {
+            if (this.Visible)
+            {
+                salesManagement = new SalesManagement("sales.json");
+                // User control is being shown, perform reloading logic here
+                MessageBox.Show("Sulod");
+                GenerateChart();
+            }
         }
     }
 }

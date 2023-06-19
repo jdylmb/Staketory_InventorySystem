@@ -228,3 +228,4 @@ C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debu
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\bin\Debug\net6.0-windows\WinForms.DataVisualization.Utilities.dll
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\bin\Debug\net6.0-windows\WinForms.DataVisualization.dll
 C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.ReportPage2.resources
+C:\Users\User\source\repos\StakeTory_InventorySystem\InventorySytem_GUI\obj\Debug\net6.0-windows\InventorySytem_GUI.CreateUser.resources

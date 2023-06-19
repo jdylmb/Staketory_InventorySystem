@@ -21,18 +21,18 @@ namespace InventorySytem_GUI
             //// Initialize the window navigator and show the login form
             WindowNavigator.ShowLoginForm();
 
-            //// Show the splash screen
-            //Thread splashThread = new Thread(ShowSplashScreen);
-            //splashThread.Start();
+            //// show the splash screen
+            //thread splashthread = new thread(showsplashscreen);
+            //splashthread.start();
 
-            //// Simulate some initialization work
-            //SimulateInitializationWork();
+            //// simulate some initialization work
+            //simulateinitializationwork();
 
 
-            //// Close the splash screen when the initialization is complete
-            //if (splashScreen != null && !splashScreen.IsDisposed)
+            //// close the splash screen when the initialization is complete
+            //if (splashscreen != null && !splashscreen.isdisposed)
             //{
-            //    splashScreen.Invoke(new Action(() => splashScreen.Close()));
+            //    splashscreen.invoke(new action(() => splashscreen.close()));
             //}
 
             // Run the application
