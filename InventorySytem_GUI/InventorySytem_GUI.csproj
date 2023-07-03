@@ -6,7 +6,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>AppLogo.ico</ApplicationIcon>
+    <StartupObject>InventorySytem_GUI.Program</StartupObject>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="AppLogo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Bunifu.UI.WinForms" Version="6.1.0" />

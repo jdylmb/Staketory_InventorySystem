@@ -42,13 +42,6 @@
             deleteBtn = new Button();
             addBtn = new Button();
             dataGridView_ProductPage = new DataGridView();
-            prod_Id = new DataGridViewTextBoxColumn();
-            Prod_name = new DataGridViewTextBoxColumn();
-            qnty = new DataGridViewTextBoxColumn();
-            prod_price = new DataGridViewTextBoxColumn();
-            prod_description = new DataGridViewTextBoxColumn();
-            prod_cat = new DataGridViewTextBoxColumn();
-            date = new DataGridViewTextBoxColumn();
             customizedPanel1 = new CustomizedPanel();
             prodIdLabel = new Label();
             productNameLabel = new Label();
@@ -64,6 +57,13 @@
             MngProductPanel = new CustomizedPanel();
             closeProductButton = new Button();
             productLowerDockPanel = new CustomizedPanel();
+            prod_Id = new DataGridViewTextBoxColumn();
+            Prod_name = new DataGridViewTextBoxColumn();
+            qnty = new DataGridViewTextBoxColumn();
+            prod_price = new DataGridViewTextBoxColumn();
+            prod_description = new DataGridViewTextBoxColumn();
+            prod_cat = new DataGridViewTextBoxColumn();
+            date = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView_ProductPage).BeginInit();
             customizedPanel1.SuspendLayout();
             customizedPanel2.SuspendLayout();
@@ -126,6 +126,7 @@
             categories.Name = "categories";
             categories.Size = new Size(386, 40);
             categories.TabIndex = 23;
+            categories.SelectedIndexChanged += categories_SelectedIndexChanged;
             // 
             // editBtn
             // 
@@ -224,57 +225,6 @@
             dataGridView_ProductPage.TabIndex = 40;
             dataGridView_ProductPage.CellClick += dataGridView_ProductPage_CellContentClick;
             dataGridView_ProductPage.CellContentClick += dataGridView_ProductPage_CellContentClick;
-            // 
-            // prod_Id
-            // 
-            prod_Id.DividerWidth = 1;
-            prod_Id.FillWeight = 60F;
-            prod_Id.HeaderText = "Product ID";
-            prod_Id.Name = "prod_Id";
-            prod_Id.Width = 70;
-            // 
-            // Prod_name
-            // 
-            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Prod_name.FillWeight = 80F;
-            Prod_name.HeaderText = "Product Name";
-            Prod_name.MinimumWidth = 110;
-            Prod_name.Name = "Prod_name";
-            // 
-            // qnty
-            // 
-            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            qnty.FillWeight = 50F;
-            qnty.HeaderText = "Quantity";
-            qnty.Name = "qnty";
-            // 
-            // prod_price
-            // 
-            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            prod_price.FillWeight = 50F;
-            prod_price.HeaderText = "Price";
-            prod_price.Name = "prod_price";
-            // 
-            // prod_description
-            // 
-            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            prod_description.FillWeight = 70F;
-            prod_description.HeaderText = "Description";
-            prod_description.Name = "prod_description";
-            // 
-            // prod_cat
-            // 
-            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            prod_cat.FillWeight = 60F;
-            prod_cat.HeaderText = "Category";
-            prod_cat.Name = "prod_cat";
-            // 
-            // date
-            // 
-            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            date.FillWeight = 40F;
-            date.HeaderText = "Date";
-            date.Name = "date";
             // 
             // customizedPanel1
             // 
@@ -392,23 +342,23 @@
             // TitleLabel
             // 
             TitleLabel.AutoSize = true;
-            TitleLabel.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            TitleLabel.Font = new Font("Microsoft YaHei UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             TitleLabel.ForeColor = Color.Indigo;
-            TitleLabel.Location = new Point(381, 22);
+            TitleLabel.Location = new Point(433, 22);
             TitleLabel.Name = "TitleLabel";
-            TitleLabel.Size = new Size(520, 36);
+            TitleLabel.Size = new Size(464, 42);
             TitleLabel.TabIndex = 0;
-            TitleLabel.Text = "Staketory Management System";
+            TitleLabel.Text = "Staketory Inventory System";
             // 
             // mng_productLabel
             // 
             mng_productLabel.AutoSize = true;
             mng_productLabel.BackColor = Color.Transparent;
-            mng_productLabel.Font = new Font("Footlight MT Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mng_productLabel.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             mng_productLabel.ForeColor = Color.White;
-            mng_productLabel.Location = new Point(609, 84);
+            mng_productLabel.Location = new Point(597, 85);
             mng_productLabel.Name = "mng_productLabel";
-            mng_productLabel.Size = new Size(99, 29);
+            mng_productLabel.Size = new Size(108, 31);
             mng_productLabel.TabIndex = 2;
             mng_productLabel.Text = "Product";
             // 
@@ -462,6 +412,61 @@
             productLowerDockPanel.Name = "productLowerDockPanel";
             productLowerDockPanel.Size = new Size(1279, 63);
             productLowerDockPanel.TabIndex = 33;
+            // 
+            // prod_Id
+            // 
+            prod_Id.DividerWidth = 1;
+            prod_Id.FillWeight = 60F;
+            prod_Id.HeaderText = "Product ID";
+            prod_Id.Name = "prod_Id";
+            prod_Id.ReadOnly = true;
+            prod_Id.Width = 70;
+            // 
+            // Prod_name
+            // 
+            Prod_name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Prod_name.FillWeight = 80F;
+            Prod_name.HeaderText = "Product Name";
+            Prod_name.MinimumWidth = 110;
+            Prod_name.Name = "Prod_name";
+            Prod_name.ReadOnly = true;
+            // 
+            // qnty
+            // 
+            qnty.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            qnty.FillWeight = 50F;
+            qnty.HeaderText = "Quantity";
+            qnty.Name = "qnty";
+            qnty.ReadOnly = true;
+            // 
+            // prod_price
+            // 
+            prod_price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_price.FillWeight = 50F;
+            prod_price.HeaderText = "Price";
+            prod_price.Name = "prod_price";
+            prod_price.ReadOnly = true;
+            // 
+            // prod_description
+            // 
+            prod_description.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_description.FillWeight = 70F;
+            prod_description.HeaderText = "Description";
+            prod_description.Name = "prod_description";
+            // 
+            // prod_cat
+            // 
+            prod_cat.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            prod_cat.FillWeight = 60F;
+            prod_cat.HeaderText = "Category";
+            prod_cat.Name = "prod_cat";
+            // 
+            // date
+            // 
+            date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            date.FillWeight = 40F;
+            date.HeaderText = "Date";
+            date.Name = "date";
             // 
             // ProductPage
             // 

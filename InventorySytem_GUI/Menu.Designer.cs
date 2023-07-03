@@ -187,6 +187,7 @@
             Controls.Add(productPage1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Menu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
             Load += Form2_Load;
             sidebar.ResumeLayout(false);

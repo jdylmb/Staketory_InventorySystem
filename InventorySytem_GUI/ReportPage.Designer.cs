@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportPage));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             mng_reportLabel = new Label();
             MngProductPanel = new CustomizedPanel();
             closeReportButton = new Button();
@@ -64,11 +64,11 @@
             // mng_reportLabel
             // 
             mng_reportLabel.AutoSize = true;
-            mng_reportLabel.Font = new Font("Footlight MT Light", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            mng_reportLabel.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             mng_reportLabel.ForeColor = SystemColors.ButtonHighlight;
             mng_reportLabel.Location = new Point(590, 72);
             mng_reportLabel.Name = "mng_reportLabel";
-            mng_reportLabel.Size = new Size(135, 29);
+            mng_reportLabel.Size = new Size(147, 31);
             mng_reportLabel.TabIndex = 2;
             mng_reportLabel.Text = "Dashboard";
             // 
@@ -113,13 +113,13 @@
             // TitleLabel
             // 
             TitleLabel.AutoSize = true;
-            TitleLabel.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            TitleLabel.Font = new Font("Microsoft YaHei UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             TitleLabel.ForeColor = Color.Indigo;
-            TitleLabel.Location = new Point(383, 23);
+            TitleLabel.Location = new Point(443, 20);
             TitleLabel.Name = "TitleLabel";
-            TitleLabel.Size = new Size(520, 36);
+            TitleLabel.Size = new Size(464, 42);
             TitleLabel.TabIndex = 0;
-            TitleLabel.Text = "Staketory Management System";
+            TitleLabel.Text = "Staketory Inventory System";
             TitleLabel.Click += TitleLabel_Click;
             // 
             // monthlySales
@@ -129,18 +129,18 @@
             monthlySales.BackgroundImageLayout = ImageLayout.None;
             monthlySales.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             monthlySales.BorderlineColor = Color.Transparent;
-            chartArea1.BorderColor = Color.Indigo;
-            chartArea1.IsSameFontSizeForAllAxes = true;
-            chartArea1.Name = "ChartArea1";
-            monthlySales.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            monthlySales.Legends.Add(legend1);
+            chartArea5.BorderColor = Color.Indigo;
+            chartArea5.IsSameFontSizeForAllAxes = true;
+            chartArea5.Name = "ChartArea1";
+            monthlySales.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            monthlySales.Legends.Add(legend5);
             monthlySales.Location = new Point(460, 228);
             monthlySales.Name = "monthlySales";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            monthlySales.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            monthlySales.Series.Add(series5);
             monthlySales.Size = new Size(742, 212);
             monthlySales.TabIndex = 34;
             monthlySales.Text = "Total Sales";
@@ -165,7 +165,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(26, 128);
+            label1.Location = new Point(3, 127);
             label1.Name = "label1";
             label1.Size = new Size(154, 32);
             label1.TabIndex = 36;
@@ -184,7 +184,7 @@
             customizedPanel1.GradientTopColor = Color.Violet;
             customizedPanel1.Location = new Point(34, 461);
             customizedPanel1.Name = "customizedPanel1";
-            customizedPanel1.Size = new Size(350, 200);
+            customizedPanel1.Size = new Size(405, 200);
             customizedPanel1.TabIndex = 37;
             // 
             // topSalesAmount
@@ -192,7 +192,7 @@
             topSalesAmount.AutoSize = true;
             topSalesAmount.BackColor = Color.Transparent;
             topSalesAmount.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            topSalesAmount.Location = new Point(26, 39);
+            topSalesAmount.Location = new Point(3, 37);
             topSalesAmount.Name = "topSalesAmount";
             topSalesAmount.Size = new Size(70, 65);
             topSalesAmount.TabIndex = 37;
@@ -256,16 +256,16 @@
             weeklySalesChart.BackgroundImageLayout = ImageLayout.None;
             weeklySalesChart.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             weeklySalesChart.BorderlineColor = Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            weeklySalesChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            weeklySalesChart.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            weeklySalesChart.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            weeklySalesChart.Legends.Add(legend6);
             weeklySalesChart.Location = new Point(460, 529);
             weeklySalesChart.Name = "weeklySalesChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            weeklySalesChart.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            weeklySalesChart.Series.Add(series6);
             weeklySalesChart.Size = new Size(742, 212);
             weeklySalesChart.TabIndex = 39;
             weeklySalesChart.Text = "Total Sales";
@@ -292,7 +292,7 @@
             totalSales.AutoSize = true;
             totalSales.BackColor = Color.Transparent;
             totalSales.Font = new Font("Segoe UI", 69.75F, FontStyle.Bold, GraphicsUnit.Point);
-            totalSales.Location = new Point(0, 38);
+            totalSales.Location = new Point(0, 37);
             totalSales.Name = "totalSales";
             totalSales.Size = new Size(135, 124);
             totalSales.TabIndex = 37;
@@ -304,7 +304,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(26, 192);
+            label5.Location = new Point(3, 190);
             label5.Name = "label5";
             label5.Size = new Size(182, 47);
             label5.TabIndex = 36;

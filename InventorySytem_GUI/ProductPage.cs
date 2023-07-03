@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -32,6 +33,16 @@ namespace InventorySytem_GUI
 
         }
 
+        private void clearFields()
+        {
+            product_Id.Text = "";
+            productName.Text = "";
+            productQuantity.Text = "";
+            price.Text = "";
+            description.Text = "";
+            categories.Text = "";
+        }
+
         private void addBtn_Click(object sender, EventArgs e)
         {
 
@@ -53,6 +64,7 @@ namespace InventorySytem_GUI
                 MessageBox.Show($"Product successfully created!");
 
                 displayDatagrid();
+                clearFields();
             }
         }
 
@@ -80,11 +92,19 @@ namespace InventorySytem_GUI
 
             };
 
-            this.productManagement.UpdateProduct(product, selectedIndex);
+            if (selectedIndex == -1)
+            {
+                MessageBox.Show($"Select a product first!");
+            }
+            else
+            {
+                this.productManagement.UpdateProduct(product, selectedIndex);
 
-            MessageBox.Show($"Product successfully updated!");
+                MessageBox.Show($"Product successfully updated!");
 
-            displayDatagrid();
+                displayDatagrid();
+            }
+
         }
 
         private void dataGridView_ProductPage_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -188,6 +208,11 @@ namespace InventorySytem_GUI
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categories_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

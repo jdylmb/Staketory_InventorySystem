@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -87,6 +88,10 @@ namespace StakeTory_InventorySystem
 
             ProductManagement productManagement = new ProductManagement("product.json");
 
+            if(sales == null || sales?.Count == 0) {
+                return null;
+            }
+
             foreach (Sales sale in sales)
             {
                 DateTime saleDate = DateTime.ParseExact(sale.Date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
@@ -97,6 +102,10 @@ namespace StakeTory_InventorySystem
                     highestSales = sale.Amount;
                     highestProduct = productManagement.FindItem(sale.Product_Code);
                 }
+            }
+
+            if (highestProduct == null) {
+                return null;
             }
 
             highestProduct.Price = highestSales;

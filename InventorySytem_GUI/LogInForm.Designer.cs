@@ -50,6 +50,7 @@
             signUpLabel = new Label();
             accountLabel = new Label();
             customizedPanel3 = new CustomizedPanel();
+            label3 = new Label();
             logInPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             customizedPanel2.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             logInPanel.BackColor = Color.White;
             logInPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            logInPanel.Controls.Add(label3);
             logInPanel.Controls.Add(pictureBox1);
             logInPanel.Controls.Add(customizedPanel2);
             logInPanel.Controls.Add(passwordLabel);
@@ -113,7 +115,7 @@
             customizedPanel2.GradientAngle = 90F;
             customizedPanel2.GradientBottomColor = Color.MediumPurple;
             customizedPanel2.GradientTopColor = Color.Violet;
-            customizedPanel2.Location = new Point(125, 474);
+            customizedPanel2.Location = new Point(127, 474);
             customizedPanel2.Name = "customizedPanel2";
             customizedPanel2.Size = new Size(160, 40);
             customizedPanel2.TabIndex = 41;
@@ -341,6 +343,18 @@
             customizedPanel3.TabIndex = 47;
             customizedPanel3.Paint += customizedPanel3_Paint;
             // 
+            // label3
+            // 
+            label3.AccessibleDescription = "clearAll";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkSlateBlue;
+            label3.Location = new Point(155, 526);
+            label3.Name = "label3";
+            label3.Size = new Size(113, 17);
+            label3.TabIndex = 44;
+            label3.Text = "Forgot Password?";
+            // 
             // LogInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -400,5 +414,6 @@
         private Label accountLabel;
         private CustomizedPanel customizedPanel3;
         private PictureBox pictureBox1;
+        private Label label3;
     }
 }

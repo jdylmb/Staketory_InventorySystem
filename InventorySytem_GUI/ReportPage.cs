@@ -58,8 +58,17 @@ namespace InventorySytem_GUI
             string currentMonthYear = currentDateTime.ToString("yyyy-MM");
 
             Product topProduct = this.salesManagement.GetHighestSellingProductOfMonth(currentMonthYear);
-            label1.Text = "Top Product: " + topProduct.Name;
-            topSalesAmount.Text = "P " + topProduct.Price.ToString("0.00");
+
+            if (topProduct != null)
+            {
+                label1.Text = "Top Product: " + topProduct.Name;
+                topSalesAmount.Text = "P " + topProduct.Price.ToString("0.00");
+            }
+            else
+            {
+                label1.Text = "Top Product: No Data Yet";
+                topSalesAmount.Text = "No value yet.";
+            }
 
             double calculatedTotalSales = this.salesManagement.CalculateTotalSales();
 
